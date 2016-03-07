@@ -10,16 +10,9 @@
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
-
-
-  	<div >
-
-    <div >
-      <div >
-        <div >
-
+  <div id="container">
+	<div id="menu">
 	<!-- ==== MENU ==== -->
-         </div>
         <div >
           <ul class="navbar">
             <li><a href="#home" >Home</a></li>
@@ -28,16 +21,18 @@
 			<li> <a href="#blog" > Blog</a></li>
 			<li> <a href="#contact" > Contact</a></li>
         </div>
-      </div>
-    </div>
     </div>
 
   	<!-- ==== /MENU ==== -->
 
-
+	<div id="el1">
+		<p>a</p>
+	</div>
+	
+	<div id="content">
 
 		<!-- ==== HEADER ==== -->
-	    <div   name="home">
+	    <div   name="home" id="home">
 			<header >
 	  		 		<h1><span ></span></h1>
 	  		 		<p>A 2.0 web developer.</p>
@@ -207,8 +202,6 @@
 			<br>
 			<br>
 
-	</div><!-- /container -->
-
 
 
 		<!-- ==== BLOG ==== -->
@@ -287,7 +280,7 @@
 			</div>
 		</section>
 
-		<div   name="contact">
+		<div   name="contact" id="contact">
 			<div >
 			<br>
 				<h1 >THANKS FOR VISITING!</h1>
@@ -295,7 +288,7 @@
 				<br>
 				<br>
 				<div >
-				<div >
+				<div class="column">
 					<h3>Contact Information</h3>
 					<p><span ></span> Paradeplatz, Zurich<br/>
 						<span ></span> +0041 9884 4893<br/>
@@ -306,7 +299,7 @@
 					</p>
 				</div>
 
-				<div >
+				<div class="column">
 					<h3>Newsletter</h3>
 					<p>Register to our newsletter and be updated with the latests information regarding our services, offers and much more.</p>
 					<p>
@@ -332,7 +325,7 @@
 					</p>
 				</div>
 
-				<div >
+				<div class="column">
 					<h3>Support Us</h3>
 					<p>If you would like to support my work and my passion for web crafting please feel free to send me an email, or to share one of my project on tweeter or facebook. Any small little thing will be appreciated!</p>
 				</div>
@@ -341,12 +334,18 @@
 
 		</div>
 
+	</div><!--/content-->
+	<div id="el2">
+	</div>
+	
+	<div id="footer">
 		<div >
-			<div >
+			<div>
 				<h4>Created by <a href="http://globis.co">globis</a> </h4>
 			</div>
 		</div>
+	</div>
 
-
+	</div><!--/container-->
   </body>
 </html>

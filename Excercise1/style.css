@@ -2,6 +2,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	/*outline: 1px solid black;*/
 	box-sizing: border-box;
 }
 
@@ -9,6 +10,7 @@ body {
 	font-family: "Raleway", "Arial", sans-serif;
 	font-size: 16px;
 	padding-top: 48px;
+	background-color: gray;
 }
 
 a:link,
@@ -26,10 +28,6 @@ a:hover {
 ul.navbar {
 	background: #222;
 	padding: 15px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
 }
 
 ul.navbar li {
@@ -42,4 +40,91 @@ ul.navbar li + li {
 
 ul.navbar a {
 	color: white;
+}
+#menu {
+	background-color: white;
+	padding-left: 3px;
+	padding-right: 3px;
+	position: fixed;
+	width: 80%;
+	top: 0;
+	left: 10%;
+}
+
+hr {
+	height: 4px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background: gray;
+}
+
+h1 {
+	text-align: center;
+	font-size: 40px;
+}
+
+#el1{
+	float: left;
+	background-color: gray;
+	width: 10%;
+}
+#el1 p{
+	color: gray;
+}
+#el2{
+	float: right;
+	background-color: gray;
+	width: 10%;
+}
+#container{
+	background-color: gray;
+	position: relative;
+}
+#content{
+	float: left;
+	width: 80%;
+	background-color: white;
+	
+}
+
+#home p {
+	font-size: 24px;
+	text-align: center;
+}
+
+/* Thanks for visiting */
+#contact .column {
+	float: left;
+	width: 33%;
+}
+
+#footer{
+	clear: both;
+	height: 50px;
+	position: relative;
+	background-color: gray;
+}
+
+#footer>div{/* versuch 2px padding wie bei menubar*/
+	background-color: white;
+
+}
+#footer>div>div{
+	background-color: gray;
+		padding-left: 3px;
+	padding-right: 3px;
+}
+
+	
+#footer h4{
+	text-align: center;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%,-50%);
+}
+	
 }

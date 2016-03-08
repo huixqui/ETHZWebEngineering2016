@@ -52,10 +52,12 @@ ul.navbar a {
 }
 
 hr {
-	height: 4px;
+	height: 3px;
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
 	background: gray;
 }
 
@@ -84,38 +86,94 @@ h1 {
 #content{
 	float: left;
 	width: 80%;
+	padding-left: 3px;
+	padding-right: 3px;
 	background-color: white;
 	
 }
 
+/* home */
+#home {
+	background: url('../Excercise1/assets/img/header_bg2.jpg') 100% 100% no-repeat;
+	background-size: 100% auto;
+	padding-top: 15%;
+	padding-bottom: 15%;
+}
 #home p {
-	font-size: 24px;
+	font-size: 40px;
 	text-align: center;
+	line-height: 200%;
 }
 
+/* about */
+#about{
+	padding-top: 3%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 2%;
+}
+#about div {
+	padding-top: 5%;
+}
+#about p {
+	line-height: 180%;
+}
+
+/* designer & coder */
+#partdesigner{
+	padding: 5%;
+	padding-left: 20%;
+	padding-right: 20%;
+	background-image: url('../Excercise1/assets/img/bg/divider12.png');
+	background-size: 120% auto;
+}
+#partcoder {
+	padding-top: 8%;
+	padding-bottom: 8%;
+	background-image: url(../Excercise1/assets/img/bg/divider22.jpg);
+}
+
+.whitecentered {
+	color: white;
+	text-align: center;
+	font-size: 22;
+}
+
+/*crafted in zurich*/
+#craftedzurich{
+	padding-top: 10%;
+	padding-bottom: 10%;
+	background: url('../Excercise1/assets/img/bg/divider661.jpg') 100% 100% no-repeat;
+	background-size: 100% auto;
+}
+#craftedzurich .whitecentered{
+	font-size: 32;
+	line-height: 250%;
+}
+
+
+
 /* Thanks for visiting */
+#contact{
+	padding: 10%;
+	padding-top: 0;
+}
 #contact .column {
 	float: left;
 	width: 33%;
+	padding: 2%;
+	padding-top: 0;
+	line-height: 200%;
 }
 
 #footer{
 	clear: both;
-	height: 50px;
 	position: relative;
+	padding-top: 4%;
+	padding-bottom: 4%;
 	background-color: gray;
+	width: 100%;
 }
-
-#footer>div{/* versuch 2px padding wie bei menubar*/
-	background-color: white;
-
-}
-#footer>div>div{
-	background-color: gray;
-		padding-left: 3px;
-	padding-right: 3px;
-}
-
 	
 #footer h4{
 	text-align: center;
@@ -127,4 +185,4 @@ h1 {
 	transform: translate(-50%,-50%);
 }
 	
-}
+	

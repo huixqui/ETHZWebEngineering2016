@@ -10,7 +10,11 @@ body {
 	font-family: "Raleway", "Arial", sans-serif;
 	font-size: 16px;
 	padding-top: 48px;
-	background-color: #222;
+	color: #333;
+}
+
+.clearfix {
+	clear: both;
 }
 
 a:link,
@@ -24,196 +28,219 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* navigation menu */
-ul.navbar {
-	background: #222;
-	padding: 15px;
+/* container */
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
 }
 
-ul.navbar li {
+/* navigation menu */
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #222;
+	padding: 15px;
+	z-index: 100;
+}
+
+#menu li {
 	display: inline-block;
 }
 
-ul.navbar li + li {
+#menu li + li {
 	margin-left: 15px;
 }
 
-ul.navbar a {
+#menu a {
 	color: white;
-}
-#menu {
-	background-color: white;
-	padding-left: 3px;
-	padding-right: 3px;
-	position: fixed;
-	width: 80%;
-	top: 0;
-	left: 10%;
-}
-
-h1 + hr {
-	height: 3px;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	background: #222;
-}
-
-h1 {
-	text-align: center;
-	font-size: 40px;
-}
-.whitecentered {
-	color: white;
-	font-size: 22;
-	text-align: center;
-}
-.inline{
-	display: inline-block;
-}
-
-#el1{
-	float: left;
-	background-color: #222;
-	width: 10%;
-}
-#el1 p{
-	color: #222;
-}
-#el2{
-	float: right;
-	background-color: #222;
-	width: 10%;
-}
-#container{
-	background-color: #222;
-	position: relative;
-}
-#content{
-	float: left;
-	width: 80%;
-	margin: 0 auto;
-	padding-left: 3px;
-	padding-right: 3px;
-	background-color: white;
-	
 }
 
 /* home */
 #home {
-	background: url('../Excercise1/assets/img/header_bg2.jpg') 100% 100% no-repeat;
-	background-size: 100% auto;
-	padding-top: 15%;
-	padding-bottom: 15%;
+	position: relative;
+}
+#home img {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+#home header {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translateY(-50%);
 }
 #home p {
-	font-size: 40px;
+	font-size: 48px;
 	text-align: center;
-	line-height: 200%;
+	line-height: 1.8em;
+	text-shadow: 1px 1px 2px white;
 }
 
-/* about */
-#about{
-	padding-top: 3%;
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-bottom: 2%;
+/* title */
+.title {
+	text-align: center;
 }
+.title h1 {
+	border-bottom: 1px solid #ccc;
+	padding: 15px 30px;
+	display: inline-block;
+	margin-bottom: 40px;
+	margin-top: 30px;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 28px;
+}
+
+/* about me */
+#about {
+	margin-top: 20px;
+	color: #
+}
+
 #about div {
-	padding-top: 5%;
+	margin-bottom: 20px;
+}
+#about div + div {
+	margin-top: 40px;
 }
 #about p {
 	line-height: 180%;
 }
 
 /* designer & coder */
-#partdesigner{
-	padding: 5%;
-	padding-left: 20%;
-	padding-right: 20%;
+#partdesigner {
 	background-image: url('../Excercise1/assets/img/bg/divider12.png');
 	background-size: 120% auto;
+	min-height: 300px;
+}
+#partdesigner p,
+#partcoder p {
+	color: white;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	text-shadow: 1px 1px 2px black;
+	line-height: 1.4;
+	font-size: 1.5em;
 }
 #partcoder {
-	padding-top: 8%;
-	padding-bottom: 8%;
-	background-image: url(../Excercise1/assets/img/bg/divider22.jpg);
+	background: black;
+	min-height: 300px;
+}
+#partdesigner .title,
+#partcoder .title {
+	text-shadow: 1px 1px 2px black;
+	color: white;
+}
+#partdesigner .title h1,
+#partcoder .title h1 {
+	border-bottom-color: white;
 }
 
 /* skills */
-#skills{
-	height: 500px;
+#skills {
 	text-align: center;
+	background: linear-gradient(white, #eee);
+	border: 1px solid #ddd;
 }
-
-#skills .barnumber{
-	font-size: 40;
-	padding: 10px;
+#skills .title h1 {
+	border-bottom: none;
 }
-#skills .bartext{
-	font-size: 20;
-	color: white;
-	padding: 10px;
+#skills .bars {
+	height: 400px;
+	padding-bottom: 30px;
 }
-.bar{
+#skills .bar {
+	display: inline-block;
+	width: 16%;
 	vertical-align: bottom;
-	width: 200;
+	position: relative;
 }
-.colorblue{
+#skills .bar + .bar {
+	margin-left: 2%;
+}
+#skills .bar .number {
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	font-size: 40px;
+	width: 100%;
+	font-weight: bold;
+	color: rgba(255,255,255,0.4);
+}
+#skills .bar .text {
+	font-size: 16px;
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	font-weight: bold;
+}
+#skills .bar.blue {
 	height: 95%;
-	background-color: rgb(97,179,169);
+	background: linear-gradient(#b0dbd6, #5fb2a8) rgb(97,179,169);
+	border: 1px solid #8dc5be;
 }
-.colorred{
+#skills .bar.red {
 	height: 80%;
-	background-color: rgb(226,177,162);
+	background: linear-gradient(#f4dcd6, #e1ae9f) rgb(226,177,162);
+	border: 1px solid #ebc0b5;
 }
-.coloryellow{
+#skills .bar.yellow {
 	height: 90%;
-	background-color: rgb(224,176,57);
+	background: linear-gradient(#efc562, #dfae36) rgb(224,176,57);
+	border: 1px solid #e7af30;
 }
-.colorgreen{
+#skills .bar.green {
 	height: 80%;
-	background-color: rgb(190,145,93);
+	background: linear-gradient(#dcba83, #bc8e5b) rgb(190,145,93);
+	border: 1px solid #dcb386;
 }
-
-
 
 /* portfolio */
-
-#portfolio div.navbar p:hover,
-#portfolio div.navbar p:active{
+#portfolio .item {
+	color: white;
+	background-color: #808080;
+	width: 150px;
+	text-align: center;
+	display: inline-block;
+	padding: 10px;
+	transition: 0.3s background-color ease;
+}
+#portfolio .item + .item {
+	margin-left: 8%;
+}
+#portfolio .item:hover,
+#portfolio .item:active{
 	color: white;
 	background-color: green;
-	padding: 10px;
-	width: 150px;
+	cursor: pointer;
+}
+#portfolio {
 	text-align: center;
-}
-#portfolio{
-	width: 100%;
-}
-
-#portfolio .navbar{
-	width: 570px;
-	margin-left: 50%;
-	transform: translate(-50%, 0);
-}
-
-#portfolio div.navbar {
-	padding: 15px;
-}
-
-#portfolio div.navbar div + div {
-	margin-left: 15px;
-}
-
-#portfolio div.navbar p {
-	width: 150px;
-	color: white;
-	background-color: #222;
-	padding: 10px;
-	text-align: center;
+	border: 1px solid #ddd;
 }
 
 #portfolio .figure {
@@ -222,94 +249,93 @@ h1 {
 	width: 100%;
 	height: 100%;
 }
-#portfolio #gallery{
+#portfolio #gallery {
 	width: 100%;
 	margin: 0 auto;
-	
+
 }
-#portfolio #gallery>div{
+#portfolio #gallery > div {
 	color: white;
 	display: inline-block;
 	margin: 2%;
 	width: 20%;
 }
-#portfolio #gallery figcaption{
+#portfolio #gallery figcaption {
 	width: 100%;
 	height: 100%;
 	padding: 5%;
 	background-color: rgb(52,152,219);
 }
 
-#portfolio #gallery h5{
+#portfolio #gallery h5 {
 	display: inline-block;
 	text-align: left;
 }
 
-#portfolio #gallery a{
+#portfolio #gallery a {
 	margin: 0;
-	width: 100px;
+	margin-top: -3px;
 	float: right;
 	padding: 5px;
-	font-size: 12;
+	font-size: 12px;
 	color: white;
 	display: inline-block;
 	background-color: #222;
 	text-align: center;
 }
-#portfolio #gallery div+div+div+div+div{
+#portfolio #gallery div+div+div+div+div {
 	margin-left: 25%;
 	transform: translate(-50%, 0);
 }
 
 /* blog */
-#blog{
-	width:100%;
+#blog {
+	background: #f5f5f5;
+	padding-bottom: 40px;
 }
-#blog>div{
-	width:100%;
-}
-#blog>div>div{
-	width:100%;
-}
-
-#blog div .blogentry {
+#blog .blogentry {
 	display: inline-block;
 	height: 400px;
+	width: 41%;
 }
-#blog .avatar{
+#blog .blogentry .avatar {
 	display: inline-block;
+	vertical-align: middle;
 	background-color: #222;
 	text-align: center;
 	color: white;
 	line-height: 150%;
 	margin: 0;
-	transform: translate(0, -50%);
+	height: 450px;
+	width: 30%;
+	margin-right: 15px;
+	float: left;
 	height: 400px;
 }
-#blog .avatar>p{
-	padding:30px;
+#blog .blogentry .avatar > div {
+	padding-top: 40px;
+	width: 100%;
 }
-#blog .avatar +div{
-	display: inline-block;
-	max-width: 410px;
-	
-	line-height: 180%;
+#blog .blogentry .text {
+	display: block;
+	background: white;
+	height: 400px;
 }
-#blog .avatar +div>h2{
-	margin: 20px;
-	margin-left: 5px;
+#blog .blogentry .text h2 {
+	padding-bottom: 20px;
+	padding-top: 10px;
 }
-#blog .avatar +div>p{
-	margin: 20px;
-	margin-left: 5px;
+#blog .blogentry .text p {
+	margin-top: 10px;
+	line-height: 1.7em;
 }
 
-#smallblog {
+#blog #smallblog {
 	color: white;
 	display: inline-block;
 	height: 400px;
 }
-#smallblog div {
+#blog #smallblog > div {
 	background-color: #222;
 	margin: 15px;
 	margin-right: 0;
@@ -324,24 +350,36 @@ h1 {
 	margin-top: 15px;
 }
 
-/*crafted in zurich*/
-#craftedzurich{
-	padding-top: 10%;
-	padding-bottom: 10%;
+/* crafted in zurich */
+#craftedzurich {
+	position: relative;
+	height: 400px;
 	background: url('../Excercise1/assets/img/bg/divider661.jpg') 100% 100% no-repeat;
 	background-size: 100% auto;
 }
-#craftedzurich .whitecentered{
-	font-size: 32;
-	line-height: 250%;
+#craftedzurich > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#craftedzurich .title h1 {
+	white-space: nowrap;
+	color: white;
+	font-size: 3em;
+}
+#craftedzurich p,
+#craftedzurich a {
+	text-align: center;
+	color: white;
+	font-size: 32px;
+	line-height: 200%;
 }
 
-
-
 /* Thanks for visiting */
-#contact{
-	padding: 10%;
-	padding-top: 0;
+#contact {
+	margin-top: 20px;
+	margin-bottom: 70px;
 }
 #contact .column {
 	float: left;
@@ -350,8 +388,10 @@ h1 {
 	padding-top: 0;
 	line-height: 200%;
 }
-
-#footer{
+#contact button {
+	padding: 3px 6px;
+}
+#footer {
 	clear: both;
 	position: relative;
 	padding-top: 4%;
@@ -359,8 +399,8 @@ h1 {
 	background-color: #222;
 	width: 100%;
 }
-	
-#footer h4{
+
+#footer h4 {
 	text-align: center;
 	margin: 0;
 	position: absolute;
@@ -369,5 +409,4 @@ h1 {
 	margin-right: -50%;
 	transform: translate(-50%,-50%);
 }
-	
-	
+

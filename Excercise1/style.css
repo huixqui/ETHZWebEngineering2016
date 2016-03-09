@@ -51,7 +51,7 @@ ul.navbar a {
 	left: 10%;
 }
 
-hr {
+h1 + hr {
 	height: 3px;
 	width: 50%;
 	margin-left: auto;
@@ -64,6 +64,14 @@ hr {
 h1 {
 	text-align: center;
 	font-size: 40px;
+}
+.whitecentered {
+	color: white;
+	font-size: 22;
+	text-align: center;
+}
+.inline{
+	display: inline-block;
 }
 
 #el1{
@@ -86,6 +94,7 @@ h1 {
 #content{
 	float: left;
 	width: 80%;
+	margin: 0 auto;
 	padding-left: 3px;
 	padding-right: 3px;
 	background-color: white;
@@ -133,10 +142,143 @@ h1 {
 	background-image: url(../Excercise1/assets/img/bg/divider22.jpg);
 }
 
-.whitecentered {
-	color: white;
+/* skills */
+#skills{
+	height: 500px;
 	text-align: center;
-	font-size: 22;
+}
+
+#skills .barnumber{
+	font-size: 40;
+	padding: 10px;
+}
+#skills .bartext{
+	font-size: 20;
+	color: white;
+	padding: 10px;
+}
+.colorblue{
+	background-color: blue;
+}
+.colorred{
+	background-color: red;
+}
+.coloryellow{
+	background-color: yellow;
+}
+.colorgreen{
+	background-color: green;
+}
+
+
+
+/* portfolio */
+
+#portfolio div.navbar p:hover,
+#portfolio div.navbar p:active{
+	color: white;
+	background-color: green;
+	padding: 10px;
+	width: 150px;
+	text-align: center;
+}
+
+#portfolio div.navbar {
+	padding: 15px;
+}
+
+#portfolio div.navbar div + div {
+	margin-left: 15px;
+}
+
+#portfolio div.navbar p {
+	width: 150px;
+	color: white;
+	background-color: gray;
+	padding: 10px;
+	text-align: center;
+}
+
+#portfolio .figure {
+	margin: 10px;
+	margin-bottom: 0;
+	width: 220px;
+	height: 150px;
+}
+#portfolio #gallery>div{
+	color: white;
+	display: inline-block;
+	margin: 20px;
+}
+#portfolio #gallery figcaption{
+	width: 240px;
+	padding: 10px;
+	background-color: blue;
+}
+
+#portfolio #gallery h5{
+	margin-right: 10px;
+	display: inline-block;
+	text-align: left;
+}
+
+#portfolio #gallery a{
+	padding: 5px;
+	margin-left: 10px;
+	font-size: 12;
+	color: white;
+	display: inline-block;
+	background-color: gray;
+	text-align: right;
+}
+
+/* blog */
+
+#blog div.navbar .blogentry {
+	display: inline-block;
+
+}
+#blog .avatar{
+	display: inline-block;
+	background-color: gray;
+	text-align: center;
+	line-height: 150%;
+}
+#blog .avatar>p{
+	padding:30px;
+}
+#blog .avatar>h5{
+	
+}
+#blog .avatar +div{
+	display: inline-block;
+	width: 350px;
+	line-height: 180%;
+}
+#blog .avatar +div>h2{
+	margin: 20px;
+}
+#blog .avatar +div>p{
+	margin: 20px;
+}
+
+#smallblog {
+	color: white;
+	display: inline-block;
+}
+#smallblog div {
+	background-color: gray;
+	margin: 15px;
+	margin-right: 0;
+	padding: 15px;
+	padding-bottom: 5px;
+}
+
+#smallblog p+p {
+	padding-top: 10px;
+}
+#smallblog p+p+p{
+	margin-top: 15px;
 }
 
 /*crafted in zurich*/

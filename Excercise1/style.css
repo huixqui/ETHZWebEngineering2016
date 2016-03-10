@@ -31,22 +31,10 @@ a:hover {
 .container {
 	width: 100%;
 	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
 }
-@media (min-width: 768px) {
-	.container {
-		width: 750px;
-	}
-}
-@media (min-width: 992px) {
-	.container {
-		width: 970px;
-	}
-}
-@media (min-width: 1200px) {
-	.container {
-		width: 1170px;
-	}
-}
+
 
 /* navigation menu */
 #menu {
@@ -87,7 +75,7 @@ a:hover {
 	transform: translateY(-50%);
 }
 #home p {
-	font-size: 48px;
+	font-size: 4vw;
 	text-align: center;
 	line-height: 1.8em;
 	text-shadow: 1px 1px 2px white;
@@ -166,12 +154,12 @@ a:hover {
 	border-bottom: none;
 }
 #skills .bars {
-	height: 400px;
+	height: 50vw;
 	padding-bottom: 30px;
 }
 #skills .bar {
 	display: inline-block;
-	width: 16%;
+	width: 20%;
 	vertical-align: bottom;
 	position: relative;
 }
@@ -180,21 +168,21 @@ a:hover {
 }
 #skills .bar .number {
 	position: absolute;
-	bottom: 50px;
+	bottom: 7vw;
 	left: 0;
-	font-size: 40px;
+	font-size: 6vw;
 	width: 100%;
 	font-weight: bold;
 	color: rgba(255,255,255,0.4);
 }
 #skills .bar .text {
-	font-size: 16px;
+	font-size: 3vw;
 	color: white;
 	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 	text-align: center;
 	width: 100%;
 	position: absolute;
-	bottom: 15px;
+	bottom: 2vw;
 	left: 0;
 	font-weight: bold;
 }
@@ -353,7 +341,7 @@ a:hover {
 /* crafted in zurich */
 #craftedzurich {
 	position: relative;
-	height: 400px;
+	height: 70vw;
 	background: url('../Excercise1/assets/img/bg/divider661.jpg') 100% 100% no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -367,14 +355,14 @@ a:hover {
 #craftedzurich .title h1 {
 	white-space: nowrap;
 	color: white;
-	font-size: 3em;
+	font-size: 4vw;
 }
 #craftedzurich p,
 #craftedzurich a {
 	text-align: center;
 	color: white;
-	font-size: 32px;
-	line-height: 200%;
+	font-size: 3.8vw;
+	line-height: 180%;
 }
 
 /* Thanks for visiting */
@@ -411,3 +399,46 @@ a:hover {
 	transform: translate(-50%,-50%);
 }
 
+/* responsive breakpoints */
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+	#skills .bars {
+		height: 400px;
+	}
+	#skills .bar {
+		width: 16%
+	}
+	#skills .bar .number {
+		font-size: 40px;
+		bottom: 50px;
+	}
+	#skills .bar .text {
+		font-size: 17px;
+		bottom: 15px;
+	}
+	#craftedzurich {
+		height: 400px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+	#home p {
+		font-size: 48px;
+	}
+	#craftedzurich .title h1 {
+		font-size: 48px;
+	}
+	#craftedzurich p,
+	#craftedzurich a {
+		font-size: 40px;
+	}
+}

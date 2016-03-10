@@ -115,16 +115,17 @@ a:hover {
 /* designer & coder */
 #partdesigner {
 	background-image: url('../Excercise1/assets/img/bg/divider12.png');
-	background-size: 120% auto;
+	background-size: cover;
 	min-height: 300px;
 	background-attachment: fixed;
 }
 #partdesigner p,
 #partcoder p {
 	color: white;
-	width: 55%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 50px;
 	text-align: center;
 	text-shadow: 1px 1px 2px black;
 	line-height: 1.4;
@@ -132,7 +133,6 @@ a:hover {
 }
 #partcoder {
 	background: black;
-	min-height: 300px;
 }
 #partdesigner .title,
 #partcoder .title {
@@ -403,6 +403,10 @@ a:hover {
 @media (min-width: 768px) {
 	.container {
 		width: 750px;
+	}
+	#partdesigner p,
+	#partcoder p {
+		width: 55%;
 	}
 	#skills .bars {
 		height: 400px;

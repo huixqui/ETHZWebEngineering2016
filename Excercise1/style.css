@@ -8,7 +8,7 @@
 body {
 	font-family: "Raleway", "Arial", sans-serif;
 	font-size: 16px;
-	padding-top: 48px;
+	padding-top: 65px;
 	color: #333;
 }
 
@@ -35,7 +35,6 @@ a:hover {
 	padding-right: 15px;
 }
 
-
 /* navigation menu */
 #menu {
 	position: fixed;
@@ -47,8 +46,8 @@ a:hover {
 	z-index: 100;
 }
 
-#menu li {
-	display: inline-block;
+#menu > ul > li {
+	display: none;
 }
 
 #menu li + li {
@@ -57,6 +56,65 @@ a:hover {
 
 #menu a {
 	color: white;
+}
+
+#menu .hamburger {
+	display: block;
+	border-radius: 5px;
+	border: 2px solid rgba(255,255,255,0.8);
+	width: 40px;
+	height: 35px;
+	cursor: pointer;
+	float: right;
+}
+#menu .hamburger:hover > .hamburger-menu {
+	visibility: visible;
+	opacity: 1;
+}
+#menu .hamburger .bars {
+	margin-top: 7px;
+}
+#menu .hamburger .bars > span {
+	display: block;
+	width: 65%;
+	height: 3px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 10px;
+	margin-top: 4px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu .hamburger-menu {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 300;
+	cursor: auto;
+	box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+	transition: 0.3s ease all;
+}
+#menu .hamburger-menu li {
+	width: 100%;
+	background: #222;
+	padding: 15px 20px;
+}
+#menu .hamburger-menu li + li {
+	margin-left: 0;
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+#menu .main-title {
+	display: block;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	line-height: 65px;
+	font-weight: bold;
 }
 
 /* home */
@@ -90,7 +148,8 @@ a:hover {
 	padding: 15px 30px;
 	display: inline-block;
 	margin-bottom: 40px;
-	margin-top: 30px;
+	padding-top: 60px;
+	margin-top: 0;
 	font-weight: 300;
 	text-transform: uppercase;
 	font-size: 28px;
@@ -99,7 +158,6 @@ a:hover {
 /* about me */
 #about {
 	margin-top: 20px;
-	color: #
 }
 
 #about div {
@@ -401,8 +459,18 @@ a:hover {
 
 /* responsive breakpoints */
 @media (min-width: 768px) {
+	body {
+		padding-top: 48px;
+	}
 	.container {
 		width: 750px;
+	}
+	#menu .hamburger,
+	#menu .main-title {
+		display: none;
+	}
+	#menu > ul > li {
+		display: inline-block;
 	}
 	#partdesigner p,
 	#partcoder p {

@@ -291,13 +291,14 @@ a:hover {
 #portfolio .item {
 	background-color: #808080;
 	text-align: center;
-	width: 20%;
+	width: 80%;
 	display: inline-block;
 	padding: 10px;
 	transition: 0.3s background-color ease;
+	font-size: 3vw;
 }
 #portfolio .item  + .item{
-	margin-left: 3%;
+	margin-top: 3%;
 }
 #portfolio .item:hover,
 #portfolio .item:active{
@@ -314,6 +315,7 @@ a:hover {
 #portfolio #gallery {
 	width: 100%;
 	display: flex;
+	padding-bottom: 40px;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -507,7 +509,7 @@ a:hover {
 /* responsive breakpoints */
 @media (max-width: 479px){
 	#portfolio{
-		font-size: 1.7vw;
+		font-size: 4vw;
 	}
 	#portfolio #gallery {
 		width: 100%;
@@ -516,7 +518,7 @@ a:hover {
 	#portfolio #gallery > div {
 		display: inline-block;
 		margin: 2%;
-		width: 60%;
+		width: 85%;
 	}
 	#portfolio #gallery figcaption {
 		font-size: 100%;
@@ -546,7 +548,7 @@ a:hover {
 		margin-top: 5%;
 		height: 100%;
 	}
-	
+
 	#information  > div{
 		align-self: center;
 		line-height: 200%;
@@ -555,8 +557,15 @@ a:hover {
 	}
 }
 @media (min-width: 480px) and (max-width: 767px){
-	#portfolio{
-		font-size: 1.8vw;
+	#portfolio {
+		font-size: 2.5vw;
+	}
+	#portfolio .item {
+		font-size: 2.5vw;
+		width: 28%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
 	}
 	#portfolio #gallery {
 		width: 100%;
@@ -574,7 +583,7 @@ a:hover {
 		margin-left: 2%;
 		transform: translate(0, 0);
 	}
-	
+
 	#blog{
 		height: 100%;
 		display: flex;
@@ -601,7 +610,7 @@ a:hover {
 		height: 100%;
 		padding: 2%;
 	}
-	
+
 	#information {
 		flex-wrap: wrap
 	}
@@ -615,11 +624,18 @@ a:hover {
 		margin-left: 50%;
 		transform: translate(-50%, 0);
 	}
-	
+
 }
 @media (min-width: 768px) and (max-width: 1023px){
 	#portfolio{
 		font-size: 1.7vw;
+	}
+	#portfolio .item {
+		font-size: 2.5vw;
+		width: 25%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
 	}
 	#portfolio #gallery {
 		width: 100%;
@@ -659,6 +675,13 @@ a:hover {
 	body {
 		padding-top: 48px;
 	}
+	#portfolio .item {
+		font-size: 2.5vw;
+		width: 25%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
+	}
 	.container {
 		width: 750px;
 	}
@@ -687,7 +710,10 @@ a:hover {
 		font-size: 17px;
 		bottom: 15px;
 	}
-	
+	#portfolio .item {
+		font-size: 20px;
+	}
+
 	#craftedzurich {
 		height: 400px;
 	}
@@ -695,6 +721,9 @@ a:hover {
 @media (min-width: 992px) {
 	.container {
 		width: 970px;
+	}
+	#portfolio .item {
+		width: 20%;
 	}
 }
 @media (min-width: 1200px) {

@@ -268,7 +268,7 @@ a:hover {
 }
 
 /* portfolio */
-#portfolio{
+#portfolio {
 	text-align: center;
 	border: 1px solid #ddd;
 	display: flex;
@@ -295,7 +295,7 @@ a:hover {
 	display: inline-block;
 	padding: 10px;
 	transition: 0.3s background-color ease;
-	font-size: 3vw;
+	font-size: 4vw;
 }
 #portfolio .item  + .item{
 	margin-top: 3%;
@@ -361,10 +361,69 @@ a:hover {
 /* blog */
 #blogsection {
 	background: #f5f5f5;
-	padding-bottom: 2%;
+	padding-bottom: 7vw;
 	height: 100%;
 }
-#blog{
+#blogsection:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+#blog {
+	position: relative;
+}
+.blogentry {
+	width: 100%;
+	position: relative;
+	margin-top: 10px;
+}
+.blogentry .avatar {
+	width: 40%;
+	background-color: #222;
+	color: white;
+	text-align: center;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-top: 20px;
+}
+.blogentry .text {
+	padding-left: 40%;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-bottom: 15px;
+	background: white;
+	padding-right: 10px;
+}
+.blogentry .text h2 {
+	margin-bottom: 15px;
+	padding-top: 15px;
+}
+.blogentry .text p {
+	line-height: 1.4;
+}
+.blogentry .text p+p {
+	margin-top: 15px;
+}
+#smallblog > div {
+	width: 100%;
+	background-color: #222;
+	display: block;
+	float: left;
+	color: white;
+	padding: 9px 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+#smallblog > div + div {
+	margin-top: -5px;
+}
+#smallblog > div p+p {
+	margin-top: 10px;
+}
+
+/*#blog {
 	height: 420px;
 	display: flex;
 	flex-direction: row;
@@ -380,7 +439,6 @@ a:hover {
 	font-size: 100%;
 	font-weight: normal;
 	vertical-align: middle;
-	background-color: #222;
 	text-align: center;
 	color: white;
 	line-height: 150%;
@@ -439,7 +497,7 @@ a:hover {
 }
 #smallblog p+p+p{
 	padding-top: 20%;
-}
+}*/
 
 /* crafted in zurich */
 #craftedzurich {
@@ -527,7 +585,7 @@ a:hover {
 		margin-left: 2%;
 		transform: translate(0, 0);
 	}
-	#blog{
+	/*#blog{
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -547,7 +605,7 @@ a:hover {
 		padding: 2%;
 		margin-top: 5%;
 		height: 100%;
-	}
+	}*/
 
 	#information  > div{
 		align-self: center;
@@ -556,7 +614,7 @@ a:hover {
 		margin-bottom: 2vw;
 	}
 }
-@media (min-width: 480px) and (max-width: 767px){
+@media (min-width: 480px) {
 	#portfolio {
 		font-size: 2.5vw;
 	}
@@ -564,7 +622,7 @@ a:hover {
 		font-size: 2.5vw;
 		width: 28%;
 	}
-	#portfolio .item  + .item{
+	#portfolio .item + .item{
 		margin-left: 3%;
 	}
 	#portfolio #gallery {
@@ -583,15 +641,28 @@ a:hover {
 		margin-left: 2%;
 		transform: translate(0, 0);
 	}
+	#blog .blogentry .avatar {
+		width: 28%;
+	}
+	#blog .blogentry .text {
+		padding-left: 28%;
+	}
+	#smallblog > div {
+		width: 31%;
+		margin-top: 20px;
+	}
+	#smallblog > div + div {
+		margin-left: 3%;
+		margin-top: 20px;
+	}
 
-	#blog{
+	/*#blog{
 		height: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		flex-wrap: wrap;
 	}
-	#blog .blogentry {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -609,7 +680,7 @@ a:hover {
 		width: 20%;
 		height: 100%;
 		padding: 2%;
-	}
+	}*/
 
 	#information {
 		flex-wrap: wrap
@@ -626,61 +697,9 @@ a:hover {
 	}
 
 }
-@media (min-width: 768px) and (max-width: 1023px){
-	#portfolio{
-		font-size: 1.7vw;
-	}
-	#portfolio .item {
-		font-size: 2.5vw;
-		width: 25%;
-	}
-	#portfolio .item  + .item{
-		margin-left: 3%;
-	}
-	#portfolio #gallery {
-		width: 100%;
-		margin: 0 auto;
-	}
-	#portfolio #gallery > div {
-		display: inline-block;
-		margin: 2%;
-		width: 25%;
-	}
-	#portfolio #gallery figcaption {
-		font-size: 100%;
-	}
-	#portfolio #gallery div+div+div+div+div {
-		margin-left: 2%;
-		transform: translate(0, 0);
-	}
-	#blog{
-		height: 100%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-	#blog .blogentry {
-		width: 50%;
-	}
-	#blog #smallblog {
-		width: 100%;
-		flex-direction: row;
-	}
-	#blog #smallblog > div{
-		width: 20%;
-		padding: 2%;
-	}
-}
 @media (min-width: 768px) {
 	body {
 		padding-top: 48px;
-	}
-	#portfolio .item {
-		font-size: 2.5vw;
-		width: 25%;
-	}
-	#portfolio .item  + .item{
-		margin-left: 3%;
 	}
 	.container {
 		width: 750px;
@@ -713,7 +732,61 @@ a:hover {
 	#portfolio .item {
 		font-size: 20px;
 	}
+	#portfolio {
+		font-size: 1.7vw;
+	}
+	#portfolio .item {
+		width: 25%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
+	}
+	#portfolio #gallery {
+		width: 100%;
+		margin: 0 auto;
+	}
+	#portfolio #gallery > div {
+		display: inline-block;
+		margin: 2%;
+		width: 25%;
+	}
+	#portfolio #gallery figcaption {
+		font-size: 100%;
+	}
+	#portfolio #gallery div+div+div+div+div {
+		margin-left: 2%;
+		transform: translate(0, 0);
+	}
+	#blogsection {
+		padding-bottom: 60px;
+	}
+	#blog .blogentry .avatar {
+		width: 20%;
+	}
+	#blog .blogentry .text {
+		padding-left: 20%;
+	}
 
+	/*#blog{
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	#blog .blogentry {
+		width: 50%;
+	}
+	#blog #smallblog {
+		width: 100%;
+		flex-direction: row;
+	}
+	#blog #smallblog > div{
+		width: 20%;
+		padding: 2%;
+	}*/
 	#craftedzurich {
 		height: 400px;
 	}
@@ -725,6 +798,32 @@ a:hover {
 	#portfolio .item {
 		width: 20%;
 	}
+	#blog .blogentry {
+		width: 42%;
+		display: block;
+		float: left;
+		margin-right: 10px;
+	}
+	#blog .blogentry .avatar {
+		width: 30%;
+	}
+	#blog .blogentry .text {
+		padding-left: 30%;
+	}
+	#smallblog {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 14.5%;
+		height: 100%;
+	}
+	#smallblog > div {
+		width: 100%;
+		float: none;
+	}
+	#smallblog > div + div {
+		margin-left: 0;
+	}
 }
 @media (min-width: 1200px) {
 	.container {
@@ -735,6 +834,12 @@ a:hover {
 	}
 	#portfolio{
 		font-size: 20px;
+	}
+	#blog .blogentry .avatar {
+		width: 28%;
+	}
+	#blog .blogentry .text {
+		padding-left: 28%;
 	}
 	#craftedzurich .title h1 {
 		font-size: 48px;

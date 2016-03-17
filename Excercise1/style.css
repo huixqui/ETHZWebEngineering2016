@@ -314,6 +314,10 @@ a:hover {
 	width: 100%;
 	height: 100%;
 }
+#portfolio figure {
+	position: relative;
+	overflow: hidden;
+}
 #portfolio #gallery {
 	width: 100%;
 	display: flex;
@@ -328,26 +332,35 @@ a:hover {
 }
 #portfolio #gallery figcaption {
 	font-size: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	display: block;
+	text-align: left;
 	width: 100%;
-	height: 100%;
+	height: auto;
 	padding: 5%;
 	background-color: rgb(52,152,219);
+	position: absolute;
+	left: 0;
+	top: 76%;
+	transition: 0.5s ease all;
+	height: 100%;
+	white-space: nowrap;
+}
+#portfolio #gallery figure:hover figcaption {
+	top: 0;
+	background-color: transparent;
+	background-image: linear-gradient(rgba(244,63,87,0), rgba(244,63,87,1));
 }
 
 #portfolio #gallery h5 {
 	display: inline-block;
-	text-align: left;
-	float: left;
 	height: 100%;
 	margin: auto 0;
 }
-
 #portfolio #gallery a {
 	margin: 0;
-	float: right;
+	position: absolute;
+	right: 5%;
+	top: 15px;
 	padding: 5px;
 	color: white;
 	display: inline-block;
@@ -507,7 +520,7 @@ a:hover {
 
 /* responsive breakpoints */
 @media (max-width: 479px){
-	#portfolio{
+	#portfolio {
 		font-size: 4vw;
 	}
 	#portfolio #gallery {
@@ -568,6 +581,9 @@ a:hover {
 		margin-left: 3%;
 		margin-top: 20px;
 	}
+	#portfolio #gallery a {
+		top: 5px;
+	}
 }
 @media (min-width: 768px) {
 	body {
@@ -623,7 +639,7 @@ a:hover {
 	#portfolio #gallery > div {
 		display: inline-block;
 		margin: 2%;
-		width: 25%;
+		width: 40%;
 	}
 	#portfolio #gallery figcaption {
 		font-size: 100%;
@@ -647,6 +663,9 @@ a:hover {
 	}
 	#craftedzurich {
 		height: 400px;
+	}
+	#portfolio #gallery a {
+		top: 10px;
 	}
 }
 @media (min-width: 992px) {
@@ -681,6 +700,12 @@ a:hover {
 	}
 	#smallblog > div + div {
 		margin-left: 0;
+	}
+	#portfolio #gallery > div {
+		width: 25%;
+	}
+	#portfolio #gallery figcaption {
+		top: 73%;
 	}
 }
 @media (min-width: 1200px) {

@@ -477,20 +477,6 @@ a:hover {
 	margin-bottom: 10px;
 	font-size: 120%;
 }
-/*#information {
-	margin-top: 1%;
-	margin-bottom: 3%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-#information  > div{
-	width: 33%;
-	padding: 2%;
-	padding-top: 0;
-	line-height: 220%;
-}*/
 #information input {
 	margin-top: 4px;
 	padding: 3px 5px;
@@ -712,6 +698,15 @@ a:hover {
 	}
 	#blog .blogentry .text {
 		padding-left: 28%;
+	}
+	#portfolio #gallery > div {
+		width: 21%;
+	}
+	#portfolio #gallery > div:nth-child(5) {
+		transform: translateX(-50%);
+	}
+	#portfolio #gallery > div:nth-child(6) {
+		transform: translateX(50%);
 	}
 	#craftedzurich .title h1 {
 		font-size: 48px;

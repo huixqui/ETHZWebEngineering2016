@@ -348,7 +348,7 @@ a:hover {
 #portfolio #gallery figure:hover figcaption {
 	top: 0;
 	background-color: transparent;
-	background-image: linear-gradient(rgba(244,63,87,0), rgba(244,63,87,1));
+	background-image: linear-gradient(rgba(255,100,100,0), rgba(255,100,100,1));
 }
 
 #portfolio #gallery h5 {

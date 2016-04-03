@@ -366,7 +366,7 @@ a:hover {
 	animation-fill-mode: forwards;
 }
 
-#portfolio #gallery figure:hover #ain {
+#portfolio #gallery figure:hover a {
 	position: absolute;
 	top: 80%;
 	width: 90%;
@@ -403,20 +403,6 @@ a:hover {
 	top: -1vw;
 	color: black;
 	background-color: transparent;
-}
-#portfolio #gallery section:target #ain{
-	display: none;
-}
-#portfolio #gallery section:target #aout{
-	display: inline-block;
-	color: black;
-	font-size: 1vw;
-}
-#portfolio #gallery section:target h5 {
-	
-}
-#portfolio #gallery figcaption #aout{
-	display: none;
 }
 
 @keyframes animh5{

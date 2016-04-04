@@ -141,6 +141,10 @@ a:hover {
 	text-shadow: 1px 1px 2px white;
 }
 
+.slidein{
+	display: none;
+}
+
 /* title */
 .title {
 	text-align: center;

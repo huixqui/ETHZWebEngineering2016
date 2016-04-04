@@ -7,6 +7,26 @@
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		<script src="http://code.jquery.com/jquery.js"></script>
+		<script>
+			
+			/* Every time the window is scrolled ... */
+			$(window).scroll( function(){
+
+				/* Check the location of each desired element */
+				$('.slidein').each( function(i){
+
+					var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+					var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+					/* If the object is completely visible in the window, fade it in */
+					if( bottom_of_window > bottom_of_object ){
+						$(this).show("slide");
+					}
+
+				}); 
+
+			});
+		</script>
 		</head>
 
 	<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
@@ -88,7 +108,7 @@
 			</section>
 
 			<!-- ==== SECTION PARTDESIGNER ==== -->
-			<section name="partdesigner" id="partdesigner" class="container">
+			<section name="partdesigner" id="partdesigner" class="container slidein">
 				<div class="title">
 					<h1>Part Designer...</h1>
 				</div>
@@ -98,7 +118,7 @@
 			</section>
 
 			<!-- ==== SECTION PARTCODER ==== -->
-			<section id="partcoder" name="partcoder" class="container">
+			<section id="partcoder" name="partcoder" class="container slidein">
 				<div class="title">
 					<h1>PART CODER!</h1>
 				</div>
@@ -171,7 +191,7 @@
 					</div>
 				</div>
 
-				<div id="gallery">
+				<div id="gallery" class="slidein">
 
 					<!-- PORTFOLIO IMAGE 1 -->
 
@@ -259,7 +279,7 @@
 					<h1>MY PERSONAL BLOG</h1>
 				</div>
 				<div id="blog">
-					<div class="blogentry">
+					<div class="blogentry slidein">
 						<div class="avatar">
 							<div>
 								<img src="assets/img/team/u1.jpg" width="60px" height="60px">
@@ -281,7 +301,7 @@
 						</div>
 					</div>
 
-					<div class="blogentry">
+					<div class="blogentry slidein">
 						<div class="avatar">
 							<div>
 								<img  src="assets/img/team/u1.jpg" width="60px" height="60px">
@@ -342,7 +362,7 @@
 			</div>
 
 			<!-- ==== SECTION CRAFTED IN ZURICH ==== -->
-			<section id="craftedzurich" class="container">
+			<section id="craftedzurich" class="container slidein">
 				<div>
 					<div class="title">
 						<h1>CRAFTED IN ZURICH, SWITZERLAND.</h1>

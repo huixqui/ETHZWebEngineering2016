@@ -346,7 +346,10 @@ a:hover {
 	transition-timing-function: linear; 
 	transition-delay: 0s; 
 	height: 100%;
-	//white-space: nowrap;
+	white-space: nowrap;
+}
+#portfolio #gallery figcaption .aout{
+	display: none;
 }
 #portfolio #gallery figure:hover figcaption {
 	text-align: center;
@@ -357,8 +360,8 @@ a:hover {
 #portfolio #gallery figure:hover h5 {
 	position: relative;
 	top: 80%;
-	//animation: animh5 0.5s 1 linear forwards;
-	animation: animh5;
+	animation: animh5 0.5s 1 linear forwards;
+	//animation: animh5;
 	animation-delay: 0s;
 	animation-duration: .5s;
 	animation-iteration-count:1;
@@ -366,7 +369,7 @@ a:hover {
 	animation-fill-mode: forwards;
 }
 
-#portfolio #gallery figure:hover a {
+#portfolio #gallery figure:hover .ain {
 	position: absolute;
 	top: 80%;
 	width: 90%;
@@ -376,24 +379,15 @@ a:hover {
 	animation-iteration-count:1;
 	animation-timing-function: linear;
 }
-
-#portfolio #gallery section:target{
-	//display: block;
-	//clear: both;
-	position: absolute;
-	//float: left;
-	top: 1.5vw;
-	left: 0vw;
-	width: 100vw;
-	height: 100vw;
-	background-color: rgba(0,0,0,0.5);
-	text-align: center;
+#portfolio #gallery section:target .ain{
+	display: none;
 }
-#portfolio #gallery section:target figure{
+#portfolio #gallery section:target .aout{
+	padding-top: 1vw;
 	display: inline-block;
+	color: black;
 	background-color: white;
-	width: 40%;
-	height: 40%;
+	font-size: 1vw;
 }
 #portfolio #gallery section:target img{
 	padding: 20px;
@@ -404,6 +398,31 @@ a:hover {
 	color: black;
 	background-color: transparent;
 }
+
+#portfolio #gallery section:target{
+	display: block;
+	clear: both;
+	position: fixed;
+	float: left;
+	top: 2vw;
+	left: -2vw;
+	width: 100vw;
+	height: 100vw;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	
+}
+
+#portfolio #gallery section:target figure{
+	top: 1vw;
+	display: inline-block;
+	background-color: white;
+	width: 35%;
+	height: 35%;
+	border-radius: 15px;
+}
+
+
 
 @keyframes animh5{
 	0%{
@@ -808,6 +827,11 @@ a:hover {
 	}
 	#portfolio #gallery > section:nth-child(6) {
 		transform: translateX(50%);
+	}#portfolio #gallery > section:target:nth-child(5) {
+		transform: translateX(0%);
+	}
+	#portfolio #gallery > section:target:nth-child(6) {
+		transform: translateX(0%);
 	}
 	#craftedzurich .title h1 {
 		font-size: 48px;

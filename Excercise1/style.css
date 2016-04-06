@@ -57,12 +57,15 @@ a:hover {
 }
 
 #menu a {
+	top: 0;
 	display: block;
 	color: white;
 }
 #menu a+img{
-	width: 3.5vw;
-	height: 3.5vw;
+	margin-top: 10px;
+	top: 0;
+	width: 3vw;
+	height: 3vw;
 }
 
 #menu .hamburger {
@@ -323,7 +326,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 }
-#portfolio figure {
+#portfolio .galleryitem {
 	position: relative;
 	overflow: hidden;
 }
@@ -339,7 +342,7 @@ a:hover {
 	width: 20%;
 	margin: 2%;
 }
-#portfolio #gallery figcaption {
+#portfolio #gallery  .galleryitem figcaption {
 	font-size: 80%;
 	display: block;
 	text-align: left;
@@ -357,16 +360,14 @@ a:hover {
 	height: 100%;
 	white-space: nowrap;
 }
-#portfolio #gallery figcaption .aout{
-	display: none;
-}
-#portfolio #gallery figure:hover figcaption {
+
+#portfolio #gallery .galleryitem:hover figcaption {
 	text-align: center;
 	top: 0;
 	background-color: transparent;
 	background-image: linear-gradient(rgba(255,100,100,0), rgba(255,100,100,1));
 }
-#portfolio #gallery figure:hover h5 {
+#portfolio #gallery .galleryitem:hover h5 {
 	position: relative;
 	top: 80%;
 	animation: animh5 0.5s 1 linear forwards;
@@ -378,7 +379,7 @@ a:hover {
 	animation-fill-mode: forwards;
 }
 
-#portfolio #gallery figure:hover .ain {
+#portfolio #gallery .galleryitem:hover a {
 	position: absolute;
 	top: 80%;
 	width: 90%;
@@ -388,48 +389,69 @@ a:hover {
 	animation-iteration-count:1;
 	animation-timing-function: linear;
 }
-#portfolio #gallery section:target .ain{
+
+.popup {
 	display: none;
 }
-#portfolio #gallery section:target .aout{
-	padding-top: 1vw;
+.popup:target figure a{
+	float: right;
 	display: inline-block;
 	color: black;
 	background-color: white;
 	font-size: 1vw;
 }
-#portfolio #gallery section:target img{
-	padding: 20px;
-	padding-top: 50px;
-}
-#portfolio #gallery section:target figcaption {
-	top: -1vw;
+.popup:target figure p{
+	display: inline-block;
 	color: black;
+	background-color: white;
+	font-size: 1vw;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.popup:target figure h5 {
+	display: inline-block;
+	float: left;
+}
+.popup:target figure img{
+	display: inline-block;
+	padding: 20px;
+	padding-top: 10px;
+	width: 90%;
+	height: 80%;
+}
+.popup:target figure figcaption {
+	display: inline-block;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-right: 20px;
+	color: black;
+	width: 100%;
 	background-color: transparent;
 }
 
-#portfolio #gallery section:target{
+.popup:target{
 	display: block;
 	clear: both;
 	position: fixed;
 	float: left;
-	top: 2vw;
+	top: 0vw;
 	left: -2vw;
 	width: 100vw;
 	height: 100vw;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.5);	
 	text-align: center;
-	
 }
 
-#portfolio #gallery section:target figure{
-	top: 1vw;
+.popup:target figure{
+	margin-top:7vw;
 	display: inline-block;
 	background-color: white;
 	width: 35%;
-	height: 35%;
+	height: 30%;
 	border-radius: 15px;
 }
+
 
 
 
@@ -455,12 +477,12 @@ a:hover {
 	}
 }
 
-#portfolio #gallery h5 {
+#portfolio #gallery .galleryitem h5 {
 	display: inline-block;
 	height: 100%;
 	margin: auto 0;
 }
-#portfolio #gallery a {
+#portfolio #gallery .galleryitem a {
 	margin: 0;
 	position: absolute;
 	right: 5%;
@@ -472,7 +494,7 @@ a:hover {
 	text-align: center;
 	font-size: 80%;
 }
-#portfolio #gallery section+section+section+section+section {
+#portfolio #gallery .galleryitem section+section+section+section+section {
 	margin-left: 25%;
 	transform: translate(-50%, 0);
 }
@@ -631,15 +653,15 @@ a:hover {
 		width: 100%;
 		margin: 0 auto;
 	}
-	#portfolio #gallery > section {
+	#portfolio #gallery  .galleryitem > section {
 		display: inline-block;
 		margin: 2%;
 		width: 85%;
 	}
-	#portfolio #gallery figcaption {
+	#portfolio #gallery  .galleryitem figcaption {
 		font-size: 100%;
 	}
-	#portfolio #gallery section+section+section+section+section {
+	#portfolio #gallery .galleryitem section+section+section+section+section {
 		margin-left: 2%;
 		transform: translate(0, 0);
 	}
@@ -659,15 +681,15 @@ a:hover {
 		width: 100%;
 		margin: 0 auto;
 	}
-	#portfolio #gallery > section{
+	#portfolio #gallery .galleryitem > section{
 		display: inline-block;
 		margin: 2%;
 		width: 40%;
 	}
-	#portfolio #gallery figcaption {
+	#portfolio #gallery .galleryitem figcaption {
 		font-size: 100%;
 	}
-	#portfolio #gallery section+section+section+section+section {
+	#portfolio #gallery .galleryitem section+section+section+section+section {
 		margin-left: 2%;
 		transform: translate(0, 0);
 	}
@@ -685,7 +707,7 @@ a:hover {
 		margin-left: 3%;
 		margin-top: 20px;
 	}
-	#portfolio #gallery a {
+	#portfolio #gallery .galleryitem a {
 		top: 5px;
 	}
 }
@@ -740,15 +762,15 @@ a:hover {
 		width: 100%;
 		margin: 0 auto;
 	}
-	#portfolio #gallery > section {
+	#portfolio #gallery  .galleryitem > section {
 		display: inline-block;
 		margin: 2%;
 		width: 40%;
 	}
-	#portfolio #gallery figcaption {
+	#portfolio #gallery .galleryitem figcaption {
 		font-size: 100%;
 	}
-	#portfolio #gallery section+section+section+section+section {
+	#portfolio #gallery .galleryitem section+section+section+section+section {
 		margin-left: 2%;
 		transform: translate(0, 0);
 	}
@@ -768,7 +790,7 @@ a:hover {
 	#craftedzurich {
 		height: 400px;
 	}
-	#portfolio #gallery a {
+	#portfolio #gallery .galleryitem a {
 		top: 10px;
 	}
 }
@@ -836,11 +858,6 @@ a:hover {
 	}
 	#portfolio #gallery > section:nth-child(6) {
 		transform: translateX(50%);
-	}#portfolio #gallery > section:target:nth-child(5) {
-		transform: translateX(0%);
-	}
-	#portfolio #gallery > section:target:nth-child(6) {
-		transform: translateX(0%);
 	}
 	#craftedzurich .title h1 {
 		font-size: 48px;

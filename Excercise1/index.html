@@ -9,10 +9,9 @@
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script>
 		
-			var icon_max_size = 3.5;
+			var icon_max_size = 3;
 			var icon_min_size = 1;
 			var map = [1,1,1,1,1];
-			var timer = {};
 			updateMenu(0);
 			
 			function updateMenu(i){
@@ -48,7 +47,6 @@
 			
 			/* Every time the window is scrolled ... */
 			$(window).scroll( function(){
-				clearTimeout(timer);
 
 				/* Check the location of each desired element */
 				$('.slidein').each( function(i){
@@ -64,13 +62,14 @@
 				}); 
 				
 				$('.lookAt').each(function(i) {
-					var mid_of_object = $(this).offset().top + ($(this).outerHeight()/2);
+					var top_of_object = $(this).offset().top;
+					var bottom_of_object = $(this).offset().top + ($(this).outerHeight());
 					var top_of_window = $(window).scrollTop();
 					var bottom_of_window = $(window).scrollTop() + $(window).height();
 
 					/* If the object is completely visible in the window, fade it in */
-					if( mid_of_object > top_of_window && mid_of_object < bottom_of_window ){
-						timer = setTimeout(updateMenu(i), 100);
+					if( top_of_object < bottom_of_window && bottom_of_object > top_of_window ){
+						updateMenu(i);
 					}
 				});
 
@@ -109,23 +108,23 @@
 			<ul class="container">
 				<li>
 					<a href="#home" >Home</a>
-					<img src='assets/img/Icons/menu-home.png'>
+						<img src='assets/img/Icons/menu-home.png'>
 				</li>
 				<li>
 					<a href="#about" > About Me</a>
-					<img src='assets/img/Icons/menu-about.png'>
+						<img src='assets/img/Icons/menu-about.png'>
 				</li>
 				<li>
 					<a href="#portfolio" > Portfolio</a>
-					<img src='assets/img/Icons/menu-portfolio.png'>
+						<img src='assets/img/Icons/menu-portfolio.png'>
 				</li>
 				<li>
 					<a href="#blog" > Blog</a>
-					<img src='assets/img/Icons/menu-blog.png'>
+						<img src='assets/img/Icons/menu-blog.png'>
 				</li>
 				<li>
 					<a href="#contact" > Contact</a>
-					<img src='assets/img/Icons/menu-contact.png'>
+						<img src='assets/img/Icons/menu-contact.png'>
 				</li>
 			</ul>
 		</div>
@@ -251,81 +250,76 @@
 
 					<!-- PORTFOLIO IMAGE 1 -->
 
-					<section id="myModal1" class="galleryitem">
+					<section class="galleryitem">
 						<figure>
 							<img class="figure" src="assets/img/portfolio/folio01.jpg" alt="">
 							<figcaption>
 								<h5>UI DESIGN</h5>
 								<a class="ain" data-toggle="modal" href="#myModal1" >Take a Look</a>
-								<a class="aout" data-toggle="modal" href="#portfolio" >x</a>
 							</figcaption>
 						</figure>
 					</section>
 
 					<!-- PORTFOLIO IMAGE 2 -->
 
-					<section id="myModal2" class="galleryitem" >
+					<section class="galleryitem" >
 						<figure>
 							<img class="figure" src="assets/img/portfolio/folio02.jpg" alt="">
 							<figcaption>
 								<h5>UI DESIGN</h5>
 								<a class="ain" data-toggle="modal" href="#myModal2" >Take a Look</a>
-								<a class="aout" data-toggle="modal" href="#portfolio" >x</a>
 							</figcaption>
 						</figure>
 					</section>
 
 					<!-- PORTFOLIO IMAGE 3 -->
 
-					<section id="myModal3" class="galleryitem">
+					<section class="galleryitem">
 						<figure>
 							<img class="figure" src="assets/img/portfolio/folio03.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal3" >Take a Look</a>
-								<a class="aout" data-toggle="modal" href="#portfolio" >x</a>
 							</figcaption>
 						</figure>
 					</section>
 
 					<!-- PORTFOLIO IMAGE 4 -->
 
-					<section id="myModal4" class="galleryitem">
+					<section class="galleryitem">
 						<figure>
 							<img class="figure" src="assets/img/portfolio/folio04.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal4" >Take a Look</a>
-								<a class="aout" data-toggle="modal" href="#portfolio" >x</a>
 							</figcaption>
 						</figure>
 					</section>
 
 					<!-- PORTFOLIO IMAGE 5 -->
 
-					<section id="myModal5" class="galleryitem">
+					<section class="galleryitem">
 						<figure>
 							<img class="figure" src="assets/img/portfolio/folio05.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal5" >Take a Look</a>
-								<a class="aout" data-toggle="modal" href="#portfolio" >x</a>
 							</figcaption>
 						</figure>
 					</section>
 
 					<!-- PORTFOLIO IMAGE 6 -->
 
-					<section id="myModal6" class="galleryitem">
-						<figure>
+					<section class="galleryitem">
+						<figure >
 							<img class="figure" src="assets/img/portfolio/folio06.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal6" >Take a Look</a>
-								<a class="aout" data-toggle="modal" href="#portfolio" >x</a>
 							</figcaption>
 						</figure>
 					</section>
+					
 				</div>
 			</div>
 
@@ -509,8 +503,67 @@
 
 		</div><!--/content-->
 		<div id="el2"></div>
-
-
+		
+		<section id="myModal1" class="popup">
+			<figure  id="myModal1popup" >
+				<figcaption>
+					<h5>ANDROID PAGE</h5>
+					<a data-toggle="modal" href="#portfolio" >x</a>
+				</figcaption>
+				<img class="figure" src="assets/img/portfolio/folio01.jpg" alt="">
+				<p>blabldsof asdf  jsdfs sdfsoihdgfiu sdgfsdsdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+			</figure>
+		</section>
+		<section id="myModal2" class="popup">
+			<figure  id="myModal2popup" >
+				<figcaption>
+					<h5>ANDROID PAGE</h5>
+					<a data-toggle="modal" href="#portfolio" >x</a>
+				</figcaption>
+				<img class="figure" src="assets/img/portfolio/folio02.jpg" alt="">
+				<p>blabldsofjsoihdgfiusdfoishognsdoiufhds sefxcnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+			</figure>
+		</section>
+		<section id="myModal3" class="popup">
+			<figure  id="myModal3popup" >
+				<figcaption>
+					<h5>ANDROID PAGE</h5>
+					<a data-toggle="modal" href="#portfolio" >x</a>
+				</figcaption>
+				<img class="figure" src="assets/img/portfolio/folio03.jpg" alt="">
+				<p>bl abas l  ds ofjsaaoi hdgfiusd foish nsdoiufhds sefnkms safdi awrfdsdfsdv stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+			</figure>
+		</section>
+		<section id="myModal4" class="popup">
+			<figure  id="myModal4popup" >
+				<figcaption>
+					<h5>ANDROID PAGE</h5>
+					<a data-toggle="modal" href="#portfolio" >x</a>
+				</figcaption>
+				<img class="figure" src="assets/img/portfolio/folio04.jpg" alt="">
+				<p>AF afafa  RF a RW dfAWw bla bldsof jsoihdgfiusdfoishogn sdoiufhds sefnkms s sepdfj wsefoiw as fsfdsdfafdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+			</figure>
+		</section>
+		<section id="myModal5" class="popup">
+			<figure  id="myModal5popup" >
+				<figcaption>
+					<h5>ANDROID PAGE</h5>
+					<a data-toggle="modal" href="#portfolio" >x</a>
+				</figcaption>
+				<img class="figure" src="assets/img/portfolio/folio05.jpg" alt="">
+				<p>bl aabl   EWR RAWdsofjsoihdgfiusdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+			</figure>
+		</section>
+		<section id="myModal6" class="popup">
+			<figure  id="myModal6popup" >
+				<figcaption>
+					<h5>ANDROID PAGE</h5>
+					<a data-toggle="modal" href="#portfolio" >x</a>
+				</figcaption>
+				<img class="figure" src="assets/img/portfolio/folio06.jpg" alt="">
+				<p>blabldsofjsoihdgfiusdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+			</figure>
+		</section>
 
 	</body>
 </html>

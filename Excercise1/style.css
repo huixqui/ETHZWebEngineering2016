@@ -57,7 +57,12 @@ a:hover {
 }
 
 #menu a {
+	display: block;
 	color: white;
+}
+#menu a+img{
+	width: 3.5vw;
+	height: 3.5vw;
 }
 
 #menu .hamburger {

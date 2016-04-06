@@ -8,9 +8,47 @@
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script>
+		
+			var icon_max_size = 3.5;
+			var icon_min_size = 1;
+			var map = [1,1,1,1,1];
+			var timer = {};
+			updateMenu(0);
+			
+			function updateMenu(i){
+				map[i] = map[i]+1;
+				
+				/*update menu Icons accrodingly*/
+				$('#menu a+img').each(function(j){
+					var relSize = get_Rel_Size(j)
+					var size = relSize.toString() + 'vw';
+					$(this).css(
+						{
+							'width': size,
+							'height': size
+						}
+					);
+				});
+			}
+			
+			function get_Rel_Size(key){
+				var maximum = 0;
+				for (s in map){
+					if (map[s] > maximum) {
+						maximum = map[s];
+					}
+				}
+				var rSize = (1/maximum) * map[key] * icon_max_size;
+				if (rSize < icon_min_size){
+					rSize = icon_min_size;
+				}
+				return rSize;
+			};
+			
 			
 			/* Every time the window is scrolled ... */
 			$(window).scroll( function(){
+				clearTimeout(timer);
 
 				/* Check the location of each desired element */
 				$('.slidein').each( function(i){
@@ -19,11 +57,22 @@
 					var bottom_of_window = $(window).scrollTop() + $(window).height();
 
 					/* If the object is completely visible in the window, fade it in */
-					if( bottom_of_window > bottom_of_object ){
+					if( bottom_of_window-100 > bottom_of_object ){
 						$(this).show("slide");
 					}
 
 				}); 
+				
+				$('.lookAt').each(function(i) {
+					var mid_of_object = $(this).offset().top + ($(this).outerHeight()/2);
+					var top_of_window = $(window).scrollTop();
+					var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+					/* If the object is completely visible in the window, fade it in */
+					if( mid_of_object > top_of_window && mid_of_object < bottom_of_window ){
+						timer = setTimeout(updateMenu(i), 100);
+					}
+				});
 
 			});
 		</script>
@@ -60,25 +109,30 @@
 			<ul class="container">
 				<li>
 					<a href="#home" >Home</a>
+					<img src='assets/img/Icons/menu-home.png'>
 				</li>
 				<li>
 					<a href="#about" > About Me</a>
+					<img src='assets/img/Icons/menu-about.png'>
 				</li>
 				<li>
 					<a href="#portfolio" > Portfolio</a>
+					<img src='assets/img/Icons/menu-portfolio.png'>
 				</li>
 				<li>
 					<a href="#blog" > Blog</a>
+					<img src='assets/img/Icons/menu-blog.png'>
 				</li>
 				<li>
 					<a href="#contact" > Contact</a>
+					<img src='assets/img/Icons/menu-contact.png'>
 				</li>
 			</ul>
 		</div>
 
 		<div id="content">
 			<!-- ==== HOME ==== -->
-			<div name="home" id="home" class="container">
+			<div name="home" id="home" class="container lookAt">
 				<img src='assets/img/header_bg2.jpg'>
 				<header>
 					<p>A 2.0 web developer.</p>
@@ -87,6 +141,7 @@
 			</div>
 
 			<!-- ==== ABOUT ==== -->
+			<div name="about" class="lookAt">
 			<section name="about" id="about" class="container">
 				<div class="title">
 					<h1>A little about my self</h1>
@@ -167,9 +222,10 @@
 					</div>
 				</div>
 			</section>
+			</div>
 
 			<!-- ==== PORTFOLIO ==== -->
-			<div name="portfolio" id="portfolio" class="container">
+			<div name="portfolio" id="portfolio" class="container lookAt">
 				<div class="title">
 					<h1>I WORKED ON COOL STUFF</h1>
 				</div>
@@ -274,7 +330,7 @@
 			</div>
 
 			<!-- ==== BLOG ==== -->
-			<div name="blog" id="blogsection" class="container">
+			<div name="blog" id="blogsection" class="container lookAt">
 				<div class="title">
 					<h1>MY PERSONAL BLOG</h1>
 				</div>
@@ -362,6 +418,7 @@
 			</div>
 
 			<!-- ==== SECTION CRAFTED IN ZURICH ==== -->
+			<div name="contact" class="lookAt">
 			<section id="craftedzurich" class="container slidein">
 				<div>
 					<div class="title">
@@ -376,7 +433,7 @@
 				</div>
 			</section>
 
-			<div id="contact" name="contact" class="container">
+			<div id="contact"  class="container">
 				<div class="title">
 					<h1>THANKS FOR VISITING!</h1>
 				</div>
@@ -439,6 +496,7 @@
 
 				</div>
 
+			</div>
 			</div>
 
 			<div id="footer">

@@ -1,0 +1,893 @@
+/*
+ * Theme Name: ETH Portfolio
+ * Author: Philippe Zindel, Sebastian Schrepfer, Thomas Schatt
+ * Version: 1.0.0
+ */
+
+
+/* main styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+body {
+	font-family: "Raleway", "Arial", sans-serif;
+	font-size: 16px;
+	padding-top: 65px;
+	color: #333;
+}
+
+.clearfix {
+	clear: both;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #3498db;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* container */
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* navigation menu */
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #222;
+	padding: 15px;
+	z-index: 100;
+}
+
+#menu > ul > li {
+	display: none;
+}
+
+#menu li + li {
+	margin-left: 15px;
+}
+
+#menu a {
+	top: 0;
+	display: block;
+	color: white;
+}
+#menu a+img{
+	margin-top: 10px;
+	top: 0;
+	width: 3vw;
+	height: 3vw;
+}
+
+#menu .hamburger {
+	display: block;
+	border-radius: 5px;
+	border: 2px solid rgba(255,255,255,0.8);
+	width: 40px;
+	height: 35px;
+	cursor: pointer;
+	float: right;
+}
+#menu .hamburger:hover > .hamburger-menu {
+	visibility: visible;
+	opacity: 1;
+}
+#menu .hamburger .bars {
+	margin-top: 7px;
+}
+#menu .hamburger .bars > span {
+	display: block;
+	width: 65%;
+	height: 3px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 10px;
+	margin-top: 4px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu .hamburger-menu {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 300;
+	cursor: auto;
+	box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+	transition: 0.3s ease all;
+}
+#menu .hamburger-menu li {
+	width: 100%;
+	background: #222;
+	padding: 15px 20px;
+}
+#menu .hamburger-menu li + li {
+	margin-left: 0;
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+#menu .main-title {
+	display: block;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	line-height: 65px;
+	font-weight: bold;
+}
+
+/* home */
+#home {
+	position: relative;
+}
+#home img {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+#home header {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translateY(-50%);
+}
+#home p {
+	font-size: 4vw;
+	text-align: center;
+	line-height: 1.8em;
+	text-shadow: 1px 1px 2px white;
+}
+
+.slidein{
+	display: none;
+}
+
+/* title */
+.title {
+	text-align: center;
+}
+.title h1 {
+	color: black;
+	border-bottom: 1px solid #ccc;
+	padding: 15px 30px;
+	display: inline-block;
+	margin-bottom: 40px;
+	padding-top: 60px;
+	margin-top: 0;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 32px;
+}
+
+/* about me */
+#about {
+	margin-top: 20px;
+}
+
+#about div {
+	margin-bottom: 20px;
+}
+#about div + div {
+	margin-top: 40px;
+}
+#about p {
+	line-height: 180%;
+}
+
+/* designer & coder */
+#partdesigner,
+#partcoder {
+	background-image: url('assets/img/bg/divider12.png');
+	background-size: cover;
+	min-height: 350px;
+	background-attachment: fixed;
+}
+#partdesigner p,
+#partcoder p {
+	color: white;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+	text-align: center;
+	text-shadow: 1px 1px 2px black;
+	line-height: 1.4;
+	font-size: 1.5em;
+}
+#partcoder {
+	background: black;
+}
+#partdesigner .title,
+#partcoder .title {
+	text-shadow: 1px 1px 2px black;
+	color: white;
+}
+#partdesigner .title h1,
+#partcoder .title h1 {
+	color: white;
+	border-bottom-color: white;
+}
+
+/* skills */
+#skills {
+	text-align: center;
+	background: linear-gradient(white, #eee);
+	border: 1px solid #ddd;
+	min-height: 500px;
+}
+#skills .title h1 {
+	border-bottom: none;
+}
+#skills .bars {
+	height: 50vw;
+	padding-bottom: 30px;
+}
+#skills .bar {
+	display: inline-block;
+	width: 20%;
+	vertical-align: bottom;
+	position: relative;
+}
+#skills .bar + .bar {
+	margin-left: 2%;
+}
+#skills .bar .number {
+	position: absolute;
+	bottom: 7vw;
+	left: 0;
+	font-size: 6vw;
+	width: 100%;
+	font-weight: bold;
+	color: rgba(255,255,255,0.4);
+}
+#skills .bar .text {
+	font-size: 3vw;
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 2vw;
+	left: 0;
+	font-weight: bold;
+}
+#skills .bar.blue {
+	height: 95%;
+	background: linear-gradient(#b0dbd6, #5fb2a8) rgb(97,179,169);
+	border: 1px solid #8dc5be;
+}
+#skills .bar.red {
+	height: 80%;
+	background: linear-gradient(#f4dcd6, #e1ae9f) rgb(226,177,162);
+	border: 1px solid #ebc0b5;
+}
+#skills .bar.yellow {
+	height: 90%;
+	background: linear-gradient(#efc562, #dfae36) rgb(224,176,57);
+	border: 1px solid #e7af30;
+}
+#skills .bar.green {
+	height: 80%;
+	background: linear-gradient(#dcba83, #bc8e5b) rgb(190,145,93);
+	border: 1px solid #dcb386;
+}
+
+/* portfolio */
+#portfolio {
+	text-align: center;
+	border: 1px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	color: white;
+	font-size: 1.5vw;
+	min-height: 500px;
+}
+#portfolio .navbar {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#portfolio .navbar  > div{
+	width: 100%;
+	margin-bottom: 1vw;
+}
+#portfolio .item {
+	background-color: #808080;
+	text-align: center;
+	width: 80%;
+	display: inline-block;
+	padding: 10px;
+	transition: 0.3s background-color ease;
+	font-size: 4vw;
+}
+#portfolio .item  + .item{
+	margin-top: 3%;
+}
+#portfolio .item:hover,
+#portfolio .item:active{
+	background-color: green;
+	cursor: pointer;
+}
+
+#portfolio .figure {
+	padding: 2%;
+	padding-bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+#portfolio .galleryitem {
+	position: relative;
+	overflow: hidden;
+}
+#portfolio #gallery {
+	width: 100%;
+	display: flex;
+	padding-bottom: 40px;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#portfolio #gallery > section {
+	width: 20%;
+	margin: 2%;
+}
+#portfolio #gallery  .galleryitem figcaption {
+	font-size: 80%;
+	display: block;
+	text-align: left;
+	width: 100%;
+	height: auto;
+	padding: 5%;
+	background-color: rgb(52,152,219);
+	position: absolute;
+	left: 0;
+	top: 76%;
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+	transition-delay: 0s;
+	height: 100%;
+	white-space: nowrap;
+}
+
+#portfolio #gallery .galleryitem:hover figcaption {
+	text-align: center;
+	top: 0;
+	background-color: transparent;
+	background-image: linear-gradient(rgba(255,100,100,0), rgba(255,100,100,1));
+}
+#portfolio #gallery .galleryitem:hover h5 {
+	position: relative;
+	top: 80%;
+	animation: animh5 0.5s 1 linear forwards;
+	//animation: animh5;
+	animation-delay: 0s;
+	animation-duration: .5s;
+	animation-iteration-count:1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+#portfolio #gallery .galleryitem:hover a {
+	position: absolute;
+	top: 80%;
+	width: 90%;
+	animation: anima;
+	animation-delay: .3s;
+	animation-duration: 1s;
+	animation-iteration-count:1;
+	animation-timing-function: linear;
+}
+
+.popup {
+	display: none;
+}
+.popup:target figure a{
+	float: right;
+	display: inline-block;
+	color: black;
+	background-color: white;
+	font-size: 1vw;
+}
+.popup:target figure p{
+	display: inline-block;
+	color: black;
+	background-color: white;
+	font-size: 1vw;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.popup:target figure h5 {
+	display: inline-block;
+	float: left;
+}
+.popup:target figure img{
+	display: inline-block;
+	padding: 20px;
+	padding-top: 10px;
+	width: 90%;
+	height: 80%;
+}
+.popup:target figure figcaption {
+	display: inline-block;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-right: 20px;
+	color: black;
+	width: 100%;
+	background-color: transparent;
+}
+
+.popup:target{
+	display: block;
+	clear: both;
+	position: fixed;
+	float: left;
+	top: 0vw;
+	left: -2vw;
+	width: 100vw;
+	height: 100vw;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+}
+
+.popup:target figure{
+	margin-top:7vw;
+	display: inline-block;
+	background-color: white;
+	width: 35%;
+	height: 30%;
+	border-radius: 15px;
+}
+
+
+
+
+@keyframes animh5{
+	0%{
+		left: -25%;
+		top: 0%;
+	}
+	100%{
+		left: 0%;
+		top: 50%;
+	}
+}
+@keyframes anima{
+	0%{
+		transform: rotateY(0deg);
+	}
+	50%{
+		transform: rotateY(180deg);
+	}
+	100%{
+		transform: rotateY(360deg);
+	}
+}
+
+#portfolio #gallery .galleryitem h5 {
+	display: inline-block;
+	height: 100%;
+	margin: auto 0;
+}
+#portfolio #gallery .galleryitem a {
+	margin: 0;
+	position: absolute;
+	right: 5%;
+	top: 15px;
+	padding: 5px;
+	color: white;
+	display: inline-block;
+	background-color: #222;
+	text-align: center;
+	font-size: 80%;
+}
+#portfolio #gallery .galleryitem section+section+section+section+section {
+	margin-left: 25%;
+	transform: translate(-50%, 0);
+}
+
+/* blog */
+#blogsection {
+	background: #f5f5f5;
+	padding-bottom: 7vw;
+	min-height: 400px;
+	height: 100%;
+}
+#blogsection:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+#blog {
+	position: relative;
+}
+.blogentry {
+	width: 100%;
+	position: relative;
+	margin-top: 10px;
+}
+.blogentry .avatar {
+	width: 40%;
+	background-color: #222;
+	color: white;
+	text-align: center;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-top: 20px;
+}
+.blogentry .text {
+	padding-left: 40%;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-bottom: 15px;
+	background: white;
+	padding-right: 10px;
+}
+.blogentry .text h2 {
+	margin-bottom: 15px;
+	padding-top: 15px;
+}
+.blogentry .text p {
+	line-height: 1.4;
+}
+.blogentry .text p+p {
+	margin-top: 15px;
+}
+#smallblog > div {
+	width: 100%;
+	background-color: #222;
+	display: block;
+	float: left;
+	color: white;
+	padding: 9px 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+#smallblog > div + div {
+	margin-top: -5px;
+}
+#smallblog > div p+p {
+	margin-top: 10px;
+}
+
+/* crafted in zurich */
+#craftedzurich {
+	position: relative;
+	height: 70vw;
+	background: url('../Excercise1/assets/img/bg/divider661.jpg') 100% 100% no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 350px;
+}
+#craftedzurich > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#craftedzurich .title h1 {
+	white-space: nowrap;
+	color: white;
+	font-size: 4vw;
+}
+#craftedzurich p,
+#craftedzurich a {
+	text-align: center;
+	color: white;
+	font-size: 3.8vw;
+	line-height: 180%;
+}
+
+/* Thanks for visiting */
+#contact{
+	min-height: 350px;
+}
+#contact:after {
+	display: table;
+	content: "";
+	clear:both;
+	margin-bottom: 50px;
+}
+#information > div {
+	width: 100%;
+	font-size: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#information > div {
+	min-height: 270px;
+}
+#information p {
+	line-height: 1.4;
+}
+#information h3 {
+	font-weight: normal;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 120%;
+}
+#information input {
+	margin-top: 4px;
+	padding: 3px 5px;
+}
+#information button {
+	padding: 3px 6px;
+}
+#footer {
+	clear: both;
+	position: relative;
+	background-color: #222;
+	width: 100%;
+	padding: 60px;
+}
+
+#footer h4 {
+	color: white;
+	font-size: 2vw;
+	font-weight: normal;
+	text-align: center;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%,-50%);
+}
+
+/* responsive breakpoints */
+@media (max-width: 479px){
+	#portfolio {
+		font-size: 4vw;
+	}
+	#portfolio #gallery {
+		width: 100%;
+		margin: 0 auto;
+	}
+	#portfolio #gallery  .galleryitem > section {
+		display: inline-block;
+		margin: 2%;
+		width: 85%;
+	}
+	#portfolio #gallery  .galleryitem figcaption {
+		font-size: 100%;
+	}
+	#portfolio #gallery .galleryitem section+section+section+section+section {
+		margin-left: 2%;
+		transform: translate(0, 0);
+	}
+}
+@media (min-width: 480px) {
+	#portfolio {
+		font-size: 2.5vw;
+	}
+	#portfolio .item {
+		font-size: 2.5vw;
+		width: 28%;
+	}
+	#portfolio .item + .item{
+		margin-left: 3%;
+	}
+	#portfolio #gallery {
+		width: 100%;
+		margin: 0 auto;
+	}
+	#portfolio #gallery .galleryitem > section{
+		display: inline-block;
+		margin: 2%;
+		width: 40%;
+	}
+	#portfolio #gallery .galleryitem figcaption {
+		font-size: 100%;
+	}
+	#portfolio #gallery .galleryitem section+section+section+section+section {
+		margin-left: 2%;
+		transform: translate(0, 0);
+	}
+	#blog .blogentry .avatar {
+		width: 28%;
+	}
+	#blog .blogentry .text {
+		padding-left: 28%;
+	}
+	#smallblog > div {
+		width: 31%;
+		margin-top: 20px;
+	}
+	#smallblog > div + div {
+		margin-left: 3%;
+		margin-top: 20px;
+	}
+	#portfolio #gallery .galleryitem a {
+		top: 5px;
+	}
+}
+@media (min-width: 768px) {
+	body {
+		padding-top: 48px;
+	}
+	.container {
+		width: 750px;
+	}
+	#menu .hamburger,
+	#menu .main-title {
+		display: none;
+	}
+	#menu > ul > li {
+		display: inline-block;
+	}
+	#partdesigner p,
+	#partcoder p {
+		width: 55%;
+	}
+	#skills .bars {
+		height: 400px;
+	}
+	#skills .bar {
+		width: 16%
+	}
+	#skills .bar .number {
+		font-size: 40px;
+		bottom: 50px;
+	}
+	#skills .bar .text {
+		font-size: 17px;
+		bottom: 15px;
+	}
+	#portfolio .item {
+		font-size: 20px;
+	}
+	#portfolio {
+		font-size: 1.7vw;
+	}
+	#portfolio .item {
+		width: 25%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
+	}
+	#portfolio .item  + .item{
+		margin-left: 3%;
+	}
+	#portfolio #gallery {
+		width: 100%;
+		margin: 0 auto;
+	}
+	#portfolio #gallery  .galleryitem > section {
+		display: inline-block;
+		margin: 2%;
+		width: 40%;
+	}
+	#portfolio #gallery .galleryitem figcaption {
+		font-size: 100%;
+	}
+	#portfolio #gallery .galleryitem section+section+section+section+section {
+		margin-left: 2%;
+		transform: translate(0, 0);
+	}
+	#blogsection {
+		padding-bottom: 60px;
+	}
+	#blog .blogentry .avatar {
+		width: 20%;
+	}
+	#blog .blogentry .text {
+		padding-left: 20%;
+	}
+	#information > div {
+		width: 50%;
+		float: left;
+	}
+	#craftedzurich {
+		height: 400px;
+	}
+	#portfolio #gallery .galleryitem a {
+		top: 10px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+	#portfolio .item {
+		width: 20%;
+	}
+	#blog .blogentry {
+		width: 42%;
+		display: block;
+		float: left;
+		margin-right: 10px;
+	}
+	#blog .blogentry .avatar {
+		width: 30%;
+	}
+	#blog .blogentry .text {
+		padding-left: 30%;
+	}
+	#smallblog {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 14.5%;
+		height: 100%;
+	}
+	#smallblog > div {
+		width: 100%;
+		float: none;
+	}
+	#smallblog > div + div {
+		margin-left: 0;
+	}
+	#portfolio #gallery #galleryitem {
+		width: 25%;
+	}
+	#portfolio #gallery figcaption {
+		top: 73%;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+	#home p {
+		font-size: 48px;
+	}
+	#portfolio{
+		font-size: 20px;
+	}
+	#blog .blogentry .avatar {
+		width: 28%;
+	}
+	#blog .blogentry .text {
+		padding-left: 28%;
+	}
+	#portfolio #gallery > section {
+		width: 21%;
+	}
+	#portfolio #gallery > section:nth-child(5) {
+		transform: translateX(-50%);
+	}
+	#portfolio #gallery > section:nth-child(6) {
+		transform: translateX(50%);
+	}
+	#craftedzurich .title h1 {
+		font-size: 48px;
+	}
+	#craftedzurich p,
+	#craftedzurich a {
+		font-size: 40px;
+	}
+
+	#information > div {
+		width: 33%;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#footer h4 {
+		font-size: 20px;
+	}
+}

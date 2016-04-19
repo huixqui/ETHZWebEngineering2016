@@ -182,10 +182,10 @@ a:hover {
 	margin-top: 20px;
 }
 
-#about div {
+#about p {
 	margin-bottom: 20px;
 }
-#about div + div {
+#about p + p {
 	margin-top: 40px;
 }
 #about p {

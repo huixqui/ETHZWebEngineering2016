@@ -147,22 +147,11 @@
 			<div name="about" class="lookAt">
 				<section name="about" id="about" class="container">
 					<div class="title">
-						<h1>A little about my self</h1>
+						<?php $page = get_page_by_title("A little about myself"); ?>
+						<h1><?php echo $page->post_title; ?></h1>
 					</div>
 
-					<div>
-						<p>
-							I am a UX/UI Designer and Front End developer from Zurich, Switzerland. I love to solve complex problem, create new and simple design solution for different topics.
-							I create beautiful, usable, professional websites using best practice accessibility and the latest W3C web standards guidelines, resulting in semantic and seo friendly XHTML and CSS. All my websites are lovingly hand coded.
-						</p>
-					</div>
-
-					<div>
-						<p>
-							At first I intended to be an animator and went to design school fully motivated to become just that. One thing led to another and 2 years went by and I was a (almost) fully fledged freelance web designer without ever planning to become one.
-							When I am not coding or designing some new websites I am usually at the gym doing boldring. To relax my nerve I like to play videogames with some friends while eating pizza! .
-						</p>
-					</div>
+					<p><?php echo apply_filters ("the_content", $page->post_content); ?></p>
 				</section>
 
 				<!-- ==== SECTION PARTDESIGNER ==== -->

@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>J. O. Rob main page</title>
+		<title><?php bloginfo('name'); ?></title>
+		<?php wp_head(); ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>J. O. Rob main page</title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		<script src="http://code.jquery.com/jquery.js"></script>
@@ -111,23 +111,23 @@
 			<ul class="container">
 				<li>
 					<a href="#home" >Home</a>
-						<img src='assets/img/Icons/menu-home.png'>
+						<img src='<?php bloginfo('template_directory'); ?>/assets/img/Icons/menu-home.png'>
 				</li>
 				<li>
 					<a href="#about" > About Me</a>
-						<img src='assets/img/Icons/menu-about.png'>
+						<img src='<?php bloginfo('template_directory'); ?>/assets/img/Icons/menu-about.png'>
 				</li>
 				<li>
 					<a href="#portfolio" > Portfolio</a>
-						<img src='assets/img/Icons/menu-portfolio.png'>
+						<img src='<?php bloginfo('template_directory'); ?>/assets/img/Icons/menu-portfolio.png'>
 				</li>
 				<li>
 					<a href="#blog" > Blog</a>
-						<img src='assets/img/Icons/menu-blog.png'>
+						<img src='<?php bloginfo('template_directory'); ?>/assets/img/Icons/menu-blog.png'>
 				</li>
 				<li>
 					<a href="#contact" > Contact</a>
-						<img src='assets/img/Icons/menu-contact.png'>
+						<img src='<?php bloginfo('template_directory'); ?>/assets/img/Icons/menu-contact.png'>
 				</li>
 			</ul>
 		</div>
@@ -135,7 +135,7 @@
 		<div id="content">
 			<!-- ==== HOME ==== -->
 			<div name="home" id="home" class="container lookAt">
-				<img src='assets/img/header_bg2.jpg'>
+				<img src='<?php bloginfo('template_directory'); ?>/assets/img/header_bg2.jpg'>
 				<header>
 					<p>A 2.0 web developer.</p>
 					<p>At your service</p>
@@ -255,7 +255,7 @@
 
 					<section class="galleryitem">
 						<figure>
-							<img class="figure" src="assets/img/portfolio/folio01.jpg" alt="">
+							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio01.jpg" alt="">
 							<figcaption>
 								<h5>UI DESIGN</h5>
 								<a class="ain" data-toggle="modal" href="#myModal1" >Take a Look</a>
@@ -267,7 +267,7 @@
 
 					<section class="galleryitem" >
 						<figure>
-							<img class="figure" src="assets/img/portfolio/folio02.jpg" alt="">
+							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio02.jpg" alt="">
 							<figcaption>
 								<h5>UI DESIGN</h5>
 								<a class="ain" data-toggle="modal" href="#myModal2" >Take a Look</a>
@@ -279,7 +279,7 @@
 
 					<section class="galleryitem">
 						<figure>
-							<img class="figure" src="assets/img/portfolio/folio03.jpg" alt="">
+							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio03.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal3" >Take a Look</a>
@@ -291,7 +291,7 @@
 
 					<section class="galleryitem">
 						<figure>
-							<img class="figure" src="assets/img/portfolio/folio04.jpg" alt="">
+							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio04.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal4" >Take a Look</a>
@@ -303,7 +303,7 @@
 
 					<section class="galleryitem">
 						<figure>
-							<img class="figure" src="assets/img/portfolio/folio05.jpg" alt="">
+							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio05.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal5" >Take a Look</a>
@@ -315,7 +315,7 @@
 
 					<section class="galleryitem">
 						<figure >
-							<img class="figure" src="assets/img/portfolio/folio06.jpg" alt="">
+							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio06.jpg" alt="">
 							<figcaption>
 								<h5>ANDROID PAGE</h5>
 								<a class="ain" data-toggle="modal" href="#myModal6" >Take a Look</a>
@@ -335,7 +335,7 @@
 					<div class="blogentry slidein">
 						<div class="avatar">
 							<div>
-								<img src="assets/img/team/u1.jpg" width="60px" height="60px">
+								<img src="<?php bloginfo('template_directory'); ?>/assets/img/team/u1.jpg" width="60px" height="60px">
 								<h4>Pinco Pallino</h4>
 								<h5>Published Feb 28.</h5>
 							</div>
@@ -357,7 +357,7 @@
 					<div class="blogentry slidein">
 						<div class="avatar">
 							<div>
-								<img  src="assets/img/team/u1.jpg" width="60px" height="60px">
+								<img  src="<?php bloginfo('template_directory'); ?>/assets/img/team/u1.jpg" width="60px" height="60px">
 								<h4>Pinco Pallino</h4>
 								<h5>Published Feb 02.</h5>
 							</div>
@@ -513,7 +513,7 @@
 					<h5>ANDROID PAGE</h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="assets/img/portfolio/folio01.jpg" alt="">
+				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio01.jpg" alt="">
 				<p>blabldsof asdf  jsdfs sdfsoihdgfiu sdgfsdsdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
 			</figure>
 		</section>
@@ -523,7 +523,7 @@
 					<h5>ANDROID PAGE</h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="assets/img/portfolio/folio02.jpg" alt="">
+				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio02.jpg" alt="">
 				<p>blabldsofjsoihdgfiusdfoishognsdoiufhds sefxcnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
 			</figure>
 		</section>
@@ -533,7 +533,7 @@
 					<h5>ANDROID PAGE</h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="assets/img/portfolio/folio03.jpg" alt="">
+				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio03.jpg" alt="">
 				<p>bl abas l  ds ofjsaaoi hdgfiusd foish nsdoiufhds sefnkms safdi awrfdsdfsdv stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
 			</figure>
 		</section>
@@ -543,7 +543,7 @@
 					<h5>ANDROID PAGE</h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="assets/img/portfolio/folio04.jpg" alt="">
+				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio04.jpg" alt="">
 				<p>AF afafa  RF a RW dfAWw bla bldsof jsoihdgfiusdfoishogn sdoiufhds sefnkms s sepdfj wsefoiw as fsfdsdfafdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
 			</figure>
 		</section>
@@ -553,7 +553,7 @@
 					<h5>ANDROID PAGE</h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="assets/img/portfolio/folio05.jpg" alt="">
+				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio05.jpg" alt="">
 				<p>bl aabl   EWR RAWdsofjsoihdgfiusdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
 			</figure>
 		</section>
@@ -563,7 +563,7 @@
 					<h5>ANDROID PAGE</h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="assets/img/portfolio/folio06.jpg" alt="">
+				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio06.jpg" alt="">
 				<p>blabldsofjsoihdgfiusdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
 			</figure>
 		</section>

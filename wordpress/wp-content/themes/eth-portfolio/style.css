@@ -579,7 +579,7 @@ a:hover {
 #craftedzurich {
 	position: relative;
 	height: 70vw;
-	background: url('../Excercise1/assets/img/bg/divider661.jpg') 100% 100% no-repeat;
+	background: url('assets/img/bg/divider661.jpg') 100% 100% no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	min-height: 350px;

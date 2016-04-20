@@ -123,10 +123,10 @@ add_action( 'customize_register', 'starter_customize_register');
 function tcx_customizer_css() {
     ?>
     <script type="text/javascript">
-        $('#skills .bar.blue').height('<?php echo get_theme_mod( 'technical_skills_setting_html' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_html' ); ?>%');
-        $('#skills .bar.red').height('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%');
-        $('#skills .bar.yellow').height('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%');
-        $('#skills .bar.green').height('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%');
+        $('#skills .bar.blue').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_html' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_html' ); ?>%');
+        $('#skills .bar.red').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%');
+        $('#skills .bar.yellow').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%');
+        $('#skills .bar.green').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%');
     </script>
 	<?php
 }

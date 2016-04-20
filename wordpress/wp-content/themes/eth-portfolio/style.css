@@ -320,13 +320,13 @@ a:hover {
 	padding: 10px;
 	transition: 0.3s background-color ease;
 	font-size: 4vw;
+	cursor: pointer;
 }
 #portfolio .item  + .item{
 	margin-top: 3%;
 }
 #portfolio .item.active {
 	background-color: green;
-	cursor: pointer;
 }
 
 #portfolio .figure {
@@ -421,6 +421,9 @@ a:hover {
 	text-align: left;
 	padding-left: 20px;
 	padding-right: 20px;
+}
+.popup:target h1 {
+	font-size: 140%;
 }
 .popup:target figure h5 {
 	display: inline-block;

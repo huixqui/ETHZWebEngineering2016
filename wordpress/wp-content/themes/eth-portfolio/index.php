@@ -246,6 +246,31 @@
 					})
 				});
 			</script>
+			<?php
+			$portfolio_posts = array();
+			$args = array( 'post_type'=> 'portfolio_element' );
+			$the_query = new WP_Query( $args );
+			if($the_query->have_posts() ) {
+				$portfolio_posts = $the_query->posts;
+			}
+			function get_portfolio_image($id) {
+				$array = get_post_meta($id, 'wp_custom_attachment');
+				return $array[0]['url'];
+			}
+			function get_portfolio_type($id) {
+				$array = get_post_meta($id, 'wp_custom_select');
+				return $array[0];
+			}
+			function normalize_type($type) {
+				if($type == "uidesign") {
+					return "UI DESIGN";
+				}
+				if($type == "android") {
+					return "ANDROID";
+				}
+				return "";
+			}
+			?>
 			<div name="portfolio" id="portfolio" class="container lookAt">
 				<div class="title slidein">
 					<h1>I WORKED ON COOL STUFF</h1>
@@ -270,78 +295,23 @@
 
 				<div id="gallery" class="slidein all">
 
-					<!-- PORTFOLIO IMAGE 1 -->
+					<?php
+					$counter = 0;
+					foreach($portfolio_posts as $post) {
+						$counter++;
+					?>
+						<section class="galleryitem <?php echo get_portfolio_type($post->ID); ?>">
+							<figure>
+								<img class="figure" src="<?php echo get_portfolio_image($post->ID); ?>" alt="">
+								<figcaption>
+									<h5><?php echo normalize_type(get_portfolio_type($post->ID)); ?></h5>
+									<a class="ain" data-toggle="modal" href="#myModal<?php echo $counter; ?>">Take a Look</a>
+								</figcaption>
+							</figure>
+						</section>
 
-					<section class="galleryitem uidesign">
-						<figure>
-							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio01.jpg" alt="">
-							<figcaption>
-								<h5>UI DESIGN</h5>
-								<a class="ain" data-toggle="modal" href="#myModal1" >Take a Look</a>
-							</figcaption>
-						</figure>
-					</section>
-
-					<!-- PORTFOLIO IMAGE 2 -->
-
-					<section class="galleryitem uidesign">
-						<figure>
-							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio02.jpg" alt="">
-							<figcaption>
-								<h5>UI DESIGN</h5>
-								<a class="ain" data-toggle="modal" href="#myModal2" >Take a Look</a>
-							</figcaption>
-						</figure>
-					</section>
-
-					<!-- PORTFOLIO IMAGE 3 -->
-
-					<section class="galleryitem android">
-						<figure>
-							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio03.jpg" alt="">
-							<figcaption>
-								<h5>ANDROID PAGE</h5>
-								<a class="ain" data-toggle="modal" href="#myModal3" >Take a Look</a>
-							</figcaption>
-						</figure>
-					</section>
-
-					<!-- PORTFOLIO IMAGE 4 -->
-
-					<section class="galleryitem android">
-						<figure>
-							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio04.jpg" alt="">
-							<figcaption>
-								<h5>ANDROID PAGE</h5>
-								<a class="ain" data-toggle="modal" href="#myModal4" >Take a Look</a>
-							</figcaption>
-						</figure>
-					</section>
-
-					<!-- PORTFOLIO IMAGE 5 -->
-
-					<section class="galleryitem android">
-						<figure>
-							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio05.jpg" alt="">
-							<figcaption>
-								<h5>ANDROID PAGE</h5>
-								<a class="ain" data-toggle="modal" href="#myModal5" >Take a Look</a>
-							</figcaption>
-						</figure>
-					</section>
-
-					<!-- PORTFOLIO IMAGE 6 -->
-
-					<section class="galleryitem android">
-						<figure >
-							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio06.jpg" alt="">
-							<figcaption>
-								<h5>ANDROID PAGE</h5>
-								<a class="ain" data-toggle="modal" href="#myModal6" >Take a Look</a>
-							</figcaption>
-						</figure>
-					</section>
-
+					<?php } ?>
+					?>
 				</div>
 			</div>
 
@@ -527,66 +497,23 @@
 		</div><!--/content-->
 		<div id="el2"></div>
 
-		<section id="myModal1" class="popup">
-			<figure  id="myModal1popup" >
+		<?php
+		$counter = 0;
+		foreach($portfolio_posts as $post) {
+			$counter++;
+		?>
+		<section id="myModal<?php echo $counter; ?>" class="popup">
+			<figure  id="myModal<?php echo $counter; ?>popup" >
 				<figcaption>
-					<h5>ANDROID PAGE</h5>
+					<h5><?php echo normalize_type(get_portfolio_type($post->ID)); ?></h5>
 					<a data-toggle="modal" href="#portfolio" >x</a>
 				</figcaption>
-				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio01.jpg" alt="">
-				<p>blabldsof asdf  jsdfs sdfsoihdgfiu sdgfsdsdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
+				<img class="figure" src="<?php echo get_portfolio_image($post->ID); ?>" alt="">
+				<h1><?php echo $post->post_title; ?></h1>
+				<p><?php echo apply_filters ("the_content", $post->post_content); ?></p>
 			</figure>
 		</section>
-		<section id="myModal2" class="popup">
-			<figure  id="myModal2popup" >
-				<figcaption>
-					<h5>ANDROID PAGE</h5>
-					<a data-toggle="modal" href="#portfolio" >x</a>
-				</figcaption>
-				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio02.jpg" alt="">
-				<p>blabldsofjsoihdgfiusdfoishognsdoiufhds sefxcnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
-			</figure>
-		</section>
-		<section id="myModal3" class="popup">
-			<figure  id="myModal3popup" >
-				<figcaption>
-					<h5>ANDROID PAGE</h5>
-					<a data-toggle="modal" href="#portfolio" >x</a>
-				</figcaption>
-				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio03.jpg" alt="">
-				<p>bl abas l  ds ofjsaaoi hdgfiusd foish nsdoiufhds sefnkms safdi awrfdsdfsdv stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
-			</figure>
-		</section>
-		<section id="myModal4" class="popup">
-			<figure  id="myModal4popup" >
-				<figcaption>
-					<h5>ANDROID PAGE</h5>
-					<a data-toggle="modal" href="#portfolio" >x</a>
-				</figcaption>
-				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio04.jpg" alt="">
-				<p>AF afafa  RF a RW dfAWw bla bldsof jsoihdgfiusdfoishogn sdoiufhds sefnkms s sepdfj wsefoiw as fsfdsdfafdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
-			</figure>
-		</section>
-		<section id="myModal5" class="popup">
-			<figure  id="myModal5popup" >
-				<figcaption>
-					<h5>ANDROID PAGE</h5>
-					<a data-toggle="modal" href="#portfolio" >x</a>
-				</figcaption>
-				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio05.jpg" alt="">
-				<p>bl aabl   EWR RAWdsofjsoihdgfiusdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
-			</figure>
-		</section>
-		<section id="myModal6" class="popup">
-			<figure  id="myModal6popup" >
-				<figcaption>
-					<h5>ANDROID PAGE</h5>
-					<a data-toggle="modal" href="#portfolio" >x</a>
-				</figcaption>
-				<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio06.jpg" alt="">
-				<p>blabldsofjsoihdgfiusdfoishognsdoiufhds sefnkms safdi  stefg jmn wejknwef kwfn kl<jn lkj>N klsnsfS</p>
-			</figure>
-		</section>
+		<?php } ?>
 
 	</body>
 </html>

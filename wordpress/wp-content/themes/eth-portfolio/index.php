@@ -219,33 +219,61 @@
 			</div>
 
 			<!-- ==== PORTFOLIO ==== -->
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$("#portfolio .item").click(function() {
+						$("#portfolio .item").removeClass('active');
+						$(this).addClass('active');
+						if($(this).is(".all")) {
+							$('#gallery').addClass('all');
+							$('#gallery').removeClass('uidesign');
+							$('#gallery').removeClass('android');
+							$('#gallery .galleryitem').show();
+						}
+						if($(this).is(".uidesign")) {
+							$('#gallery').removeClass('all');
+							$('#gallery').addClass('uidesign');
+							$('#gallery').removeClass('android');
+							$('#gallery .galleryitem.uidesign').show();
+							$('#gallery .galleryitem.android').hide();
+						}
+						if($(this).is(".android")) {
+							$('#gallery').removeClass('all');
+							$('#gallery').removeClass('uidesign');
+							$('#gallery').addClass('android');
+							$('#gallery .galleryitem.uidesign').hide();
+							$('#gallery .galleryitem.android').show();
+						}
+					})
+				});
+			</script>
 			<div name="portfolio" id="portfolio" class="container lookAt">
 				<div class="title slidein">
 					<h1>I WORKED ON COOL STUFF</h1>
 				</div>
 				<div class="navbar">
 					<div>
-						<div class="item">
+						<div class="item all active">
 							<p>
 								ALL
 							</p>
 						</div>
-						<div class="item">
+						<div class="item uidesign">
 							<p>
 								UI DESIGN
 							</p>
 						</div>
-						<div class="item">
+						<div class="item android">
 							<p>ANDROID PAGE</p>
 						</div>
 					</div>
 				</div>
 
-				<div id="gallery" class="slidein">
+				<div id="gallery" class="slidein all">
 
 					<!-- PORTFOLIO IMAGE 1 -->
 
-					<section class="galleryitem">
+					<section class="galleryitem uidesign">
 						<figure>
 							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio01.jpg" alt="">
 							<figcaption>
@@ -257,7 +285,7 @@
 
 					<!-- PORTFOLIO IMAGE 2 -->
 
-					<section class="galleryitem" >
+					<section class="galleryitem uidesign">
 						<figure>
 							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio02.jpg" alt="">
 							<figcaption>
@@ -269,7 +297,7 @@
 
 					<!-- PORTFOLIO IMAGE 3 -->
 
-					<section class="galleryitem">
+					<section class="galleryitem android">
 						<figure>
 							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio03.jpg" alt="">
 							<figcaption>
@@ -281,7 +309,7 @@
 
 					<!-- PORTFOLIO IMAGE 4 -->
 
-					<section class="galleryitem">
+					<section class="galleryitem android">
 						<figure>
 							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio04.jpg" alt="">
 							<figcaption>
@@ -293,7 +321,7 @@
 
 					<!-- PORTFOLIO IMAGE 5 -->
 
-					<section class="galleryitem">
+					<section class="galleryitem android">
 						<figure>
 							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio05.jpg" alt="">
 							<figcaption>
@@ -305,7 +333,7 @@
 
 					<!-- PORTFOLIO IMAGE 6 -->
 
-					<section class="galleryitem">
+					<section class="galleryitem android">
 						<figure >
 							<img class="figure" src="<?php bloginfo('template_directory'); ?>/assets/img/portfolio/folio06.jpg" alt="">
 							<figcaption>

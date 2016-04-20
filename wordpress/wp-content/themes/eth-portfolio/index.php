@@ -157,20 +157,22 @@
 				<!-- ==== SECTION PARTDESIGNER ==== -->
 				<section name="partdesigner" id="partdesigner" class="container">
 					<div class="title slidein">
-						<h1>Part Designer...</h1>
+						<?php $page = get_page_by_title("Part Designer…"); ?>
+						<h1><?php echo $page->post_title; ?></h1>
 					</div>
 					<p class="slidein">
-						A web developer needs to have a good aesthetic eye on his product. For this reason part of my skills include user interface and interaction design.
+						<?php echo apply_filters ("the_content", $page->post_content); ?>
 					</p>
 				</section>
 
 				<!-- ==== SECTION PARTCODER ==== -->
 				<section id="partcoder" name="partcoder" class="container">
 					<div class="title slidein">
-						<h1>PART CODER!</h1>
+						<?php $page = get_page_by_title("Part Coder!"); ?>
+						<h1><?php echo $page->post_title; ?></h1>
 					</div>
 					<p class="slidein">
-						But a website cannot be just nice to see... It has to work! That's why we have JavaScript, PHP and CMS like WordPress
+						<?php echo apply_filters ("the_content", $page->post_content); ?>
 					</p>
 				</section>
 
@@ -409,14 +411,10 @@
 				<section id="craftedzurich" class="container">
 					<div class="slidein">
 						<div class="title">
-							<h1>CRAFTED IN ZURICH, SWITZERLAND.</h1>
+							<?php $page = get_page_by_title("Crafted in Zurich - Switzerland"); ?>
+							<h1><?php echo $page->post_title; ?></h1>
 						</div>
-						<p >
-							Paradeplatz 987,
-						</p>
-						<p>
-							<a href="tel:+4198844893">+0041 9884 4893</a>
-						</p>
+						<p><?php echo apply_filters ("the_content", $page->post_content); ?></p>
 					</div>
 				</section>
 

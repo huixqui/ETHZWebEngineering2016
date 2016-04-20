@@ -73,6 +73,11 @@ function starter_customize_register( $wp_customize )
         'priority' => 30
     ) );
 
+    $wp_customize->add_section( 'contact_section' , array(
+        'title'    => __( 'Contact'),
+        'priority' => 29
+    ) );
+
     $wp_customize->add_setting( 'technical_skills_setting_html' , array(
         'default'   => '',
         'transport' => 'refresh',
@@ -90,32 +95,92 @@ function starter_customize_register( $wp_customize )
         'transport' => 'refresh',
     ) );
 
+	 $wp_customize->add_setting( 'contact_setting_address' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'contact_setting_phone' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'contact_setting_fax' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'contact_setting_email' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'contact_setting_twitter' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'contact_setting_name' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+
+
     $wp_customize->add_control( 'technical_skills_html', array(
         'type'     => 'number',
         'label'    => __( 'HTML Skills' ),
         'section'  => 'technical_skills_section',
         'settings' => 'technical_skills_setting_html',
     ) );
-
 	 $wp_customize->add_control( 'technical_skills_css', array(
         'type'     => 'number',
         'label'    => __( 'CSS Skills' ),
         'section'  => 'technical_skills_section',
         'settings' => 'technical_skills_setting_css',
     ) );
-
 	 $wp_customize->add_control( 'technical_skills_javascript', array(
         'type'     => 'number',
         'label'    => __( 'JavaScript Skills' ),
         'section'  => 'technical_skills_section',
         'settings' => 'technical_skills_setting_javascript',
     ) );
-
 	 $wp_customize->add_control( 'technical_skills_wordpress', array(
         'type'     => 'number',
         'label'    => __( 'Wordpress Skills' ),
         'section'  => 'technical_skills_section',
         'settings' => 'technical_skills_setting_wordpress',
+    ) );
+
+	 $wp_customize->add_control( 'contact_address', array(
+        'type'     => 'text',
+        'label'    => __( 'Address' ),
+        'section'  => 'contact_section',
+        'settings' => 'contact_setting_address',
+    ) );
+	 $wp_customize->add_control( 'contact_phone', array(
+        'type'     => 'text',
+        'label'    => __( 'Phone' ),
+        'section'  => 'contact_section',
+        'settings' => 'contact_setting_phone',
+    ) );
+	 $wp_customize->add_control( 'contact_fax', array(
+        'type'     => 'text',
+        'label'    => __( 'Fax' ),
+        'section'  => 'contact_section',
+        'settings' => 'contact_setting_fax',
+    ) );
+	 $wp_customize->add_control( 'contact_email', array(
+        'type'     => 'text',
+        'label'    => __( 'E-Mail' ),
+        'section'  => 'contact_section',
+        'settings' => 'contact_setting_email',
+    ) );
+	 $wp_customize->add_control( 'contact_twitter', array(
+        'type'     => 'text',
+        'label'    => __( 'Twitter' ),
+        'section'  => 'contact_section',
+        'settings' => 'contact_setting_twitter',
+    ) );
+	 $wp_customize->add_control( 'contact_name', array(
+        'type'     => 'text',
+        'label'    => __( 'Name' ),
+        'section'  => 'contact_section',
+        'settings' => 'contact_setting_name',
     ) );
 }
 add_action( 'customize_register', 'starter_customize_register');
@@ -127,6 +192,13 @@ function tcx_customizer_css() {
         $('#skills .bar.red').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%');
         $('#skills .bar.yellow').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%');
         $('#skills .bar.green').outerHeight('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%');
+
+        $('#contact #information').find(".address").text('<?php echo get_theme_mod( 'contact_setting_address' ); ?>');
+        $('#contact #information').find(".phone").text('<?php echo get_theme_mod( 'contact_setting_phone' ); ?>');
+        $('#contact #information').find(".fax").text('<?php echo get_theme_mod( 'contact_setting_fax' ); ?>');
+        $('#contact #information').find(".email").text('<?php echo get_theme_mod( 'contact_setting_email' ); ?>');
+        $('#contact #information').find(".twitter").text('<?php echo get_theme_mod( 'contact_setting_twitter' ); ?>');
+        $('#contact #information').find(".name").text('<?php echo get_theme_mod( 'contact_setting_name' ); ?>');
     </script>
 	<?php
 }

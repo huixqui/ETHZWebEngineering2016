@@ -428,17 +428,17 @@
 						<div class="slidein">
 							<h3>Contact Information</h3>
 							<p>
-								<span ></span> Paradeplatz, Zurich
+								<span class="address"></span>
 								<br/>
-								<span ></span> +0041 9884 4893
+								<span class="phone"></span>
 								<br/>
-								<span ></span> +0041 9884 8893
+								<span class="fax"></span>
 								<br/>
-								<span ></span><a href="#"> mrdesignrobot@inf.co</a>
+								<a href><span class="email"></span></a>
 								<br/>
-								<span ></span><a href="#"> @mrdesignrobot </a>
+								<a href><span class="twitter"></span></a>
 								<br/>
-								<span ></span><a href="#"> Mr Design Luigi</a>
+								<a href><span class="name"></span></a>
 								<br/>
 							</p>
 						</div>

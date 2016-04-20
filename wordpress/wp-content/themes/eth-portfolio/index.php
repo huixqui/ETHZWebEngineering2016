@@ -319,7 +319,18 @@
 			</div>
 
 			<!-- ==== BLOG ==== -->
+			<?php
+			function formatDate($string) {
+				return date("M y", strtotime($string));
+			}
+			function getAuthorName($id) {
+				$user = get_user_by('id', $id);
+				return $user->display_name;
+			}
+			?>
+
 			<div name="blog" id="blogsection" class="container lookAt">
+				<?php $posts = wp_get_recent_posts( array("numberposts" => 5, 'orderby' => 'post_date', 'post_type' => 'post', 'post_status' => 'publish')); ?>
 				<div class="title">
 					<h1>MY PERSONAL BLOG</h1>
 				</div>
@@ -328,20 +339,17 @@
 						<div class="avatar">
 							<div>
 								<img src="<?php bloginfo('template_directory'); ?>/assets/img/team/u1.jpg" width="60px" height="60px">
-								<h4>Pinco Pallino</h4>
-								<h5>Published Feb 28.</h5>
+								<h4><?php echo getAuthorName($posts[0]['post_author']); ?></h4>
+								<h5>Published<br><?php echo formatDate($posts[0]['post_date']); ?></h5>
 							</div>
 						</div>
 						<div class="text">
-							<h2>What Define Success</h2>
+							<h2><?php echo $posts[0]['post_title']; ?></h2>
 							<p>
-								No matter how old you are, where you’re from or what you do for a living, we all share something in common—a desire to be successful. .
+								<?php echo apply_filters ("the_content", $posts[0]['post_content']); ?>
 							</p>
 							<p>
-								Each person’s definition of success is different, however, as some may define success as being a loving and faithful spouse or a caring and responsible parent, while most people would equate success with wealth, fame, and power
-							</p>
-							<p>
-								<a href="#" > Read More</a>
+								<a href="#" >Read More</a>
 							</p>
 						</div>
 					</div>
@@ -350,17 +358,14 @@
 						<div class="avatar">
 							<div>
 								<img  src="<?php bloginfo('template_directory'); ?>/assets/img/team/u1.jpg" width="60px" height="60px">
-								<h4>Pinco Pallino</h4>
-								<h5>Published Feb 02.</h5>
+								<h4><?php echo getAuthorName($posts[1]['post_author']); ?></h4>
+								<h5>Published<br><?php echo formatDate($posts[1]['post_date']); ?></h5>
 							</div>
 						</div>
 						<div class="text">
-							<h2>A Beautiful Story</h2>
+							<h2><?php echo $posts[1]['post_title']; ?></h2>
 							<p>
-								One day, in a heavily crowded place, a young man was shouting at the crowd. “People look at me; I have the most beautiful heart in the world.”
-							</p>
-							<p>
-								Many people looked at him and were stunned to see the beautiful heart in a perfect shape, no little flaw, which looked quite amazing. Most of the people who saw his heart was mesmerized by the beauty of his heart and praised him.
+								<?php echo apply_filters ("the_content", $posts[1]['post_content']); ?>
 							</p>
 							<p>
 								<a href="#" > Read More</a>
@@ -371,10 +376,10 @@
 					<div id="smallblog">
 						<div>
 							<p>
-								Parallax Tutorial
+								<?php echo $posts[2]['post_title']; ?>
 							</p>
 							<p >
-								Dec. 2015
+								<?php echo formatDate($posts[2]['post_date']); ?>
 							</p>
 							<p>
 								<a href="#" > Read More</a>
@@ -382,10 +387,10 @@
 						</div>
 						<div>
 							<p>
-								Positioning in CSS
+								<?php echo $posts[3]['post_title']; ?>
 							</p>
 							<p >
-								Nov. 2015
+								<?php echo formatDate($posts[3]['post_date']); ?>
 							</p>
 							<p>
 								<a href="#" > Read More</a>
@@ -393,10 +398,10 @@
 						</div>
 						<div>
 							<p>
-								What is Node.js?
+								<?php echo $posts[4]['post_title']; ?>
 							</p>
 							<p >
-								Sep. 2015
+								<?php echo formatDate($posts[3]['post_date']); ?>
 							</p>
 							<p>
 								<a href="#" > Read More</a>

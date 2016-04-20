@@ -81,7 +81,7 @@
 		</script>
 		</head>
 
-	<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+	<body data-spy="scroll" data-offset="0" data-target="#navbar-main" <?php body_class(); ?>>
 		<!-- ==== MENU ==== -->
 		<div id="menu">
 			<div class="hamburger">

@@ -64,4 +64,71 @@ function update_edit_form() {
 	echo ' enctype="multipart/form-data"';
 }
 add_action('post_edit_form_tag', 'update_edit_form');
+
+
+function starter_customize_register( $wp_customize )
+{
+    $wp_customize->add_section( 'technical_skills_section' , array(
+        'title'    => __( 'Technical Skills'),
+        'priority' => 30
+    ) );
+
+    $wp_customize->add_setting( 'technical_skills_setting_html' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'technical_skills_setting_css' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'technical_skills_setting_javascript' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+	 $wp_customize->add_setting( 'technical_skills_setting_wordpress' , array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( 'technical_skills_html', array(
+        'type'     => 'number',
+        'label'    => __( 'HTML Skills' ),
+        'section'  => 'technical_skills_section',
+        'settings' => 'technical_skills_setting_html',
+    ) );
+
+	 $wp_customize->add_control( 'technical_skills_css', array(
+        'type'     => 'number',
+        'label'    => __( 'CSS Skills' ),
+        'section'  => 'technical_skills_section',
+        'settings' => 'technical_skills_setting_css',
+    ) );
+
+	 $wp_customize->add_control( 'technical_skills_javascript', array(
+        'type'     => 'number',
+        'label'    => __( 'JavaScript Skills' ),
+        'section'  => 'technical_skills_section',
+        'settings' => 'technical_skills_setting_javascript',
+    ) );
+
+	 $wp_customize->add_control( 'technical_skills_wordpress', array(
+        'type'     => 'number',
+        'label'    => __( 'Wordpress Skills' ),
+        'section'  => 'technical_skills_section',
+        'settings' => 'technical_skills_setting_wordpress',
+    ) );
+}
+add_action( 'customize_register', 'starter_customize_register');
+
+function tcx_customizer_css() {
+    ?>
+    <script type="text/javascript">
+        $('#skills .bar.blue').height('<?php echo get_theme_mod( 'technical_skills_setting_html' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_html' ); ?>%');
+        $('#skills .bar.red').height('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_css' ); ?>%');
+        $('#skills .bar.yellow').height('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_javascript' ); ?>%');
+        $('#skills .bar.green').height('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%').find('.number').text('<?php echo get_theme_mod( 'technical_skills_setting_wordpress' ); ?>%');
+    </script>
+	<?php
+}
+add_action( 'wp_footer', 'tcx_customizer_css' );
 ?>

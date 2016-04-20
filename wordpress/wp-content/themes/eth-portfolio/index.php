@@ -514,6 +514,6 @@
 			</figure>
 		</section>
 		<?php } ?>
-
+		<?php wp_footer(); ?>
 	</body>
 </html>

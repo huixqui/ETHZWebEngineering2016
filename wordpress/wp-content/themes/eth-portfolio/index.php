@@ -138,8 +138,7 @@
 			<div name="home" id="home" class="container lookAt">
 				<img src='<?php bloginfo('template_directory'); ?>/assets/img/header_bg2.jpg'>
 				<header>
-					<p>A 2.0 web developer.</p>
-					<p>At your service</p>
+					<p><?php bloginfo('description'); ?></p>
 				</header>
 			</div>
 
